@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SatelliteGuardHome() {
   const services = [
     {
@@ -44,7 +46,7 @@ export default function SatelliteGuardHome() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.25),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.18),transparent_30%)]" />
         <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
-        <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+        <header className="relative z-10 mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 py-6">
           <div className="flex items-center gap-3">
             <div className="flex h-[11rem] w-[11rem] items-center justify-center rounded-2xl bg-blue-600/20 text-[5rem] ring-1 ring-blue-400/30">
               🛰️
@@ -64,12 +66,20 @@ export default function SatelliteGuardHome() {
             <a href="#contacto" className="transition hover:text-white">Contacto</a>
           </nav>
 
-          <a
-            href="#contacto"
-            className="rounded-xl border border-blue-400/40 bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-950/40 transition hover:bg-blue-500"
-          >
-            Cotizar
-          </a>
+          <div className="ml-auto flex items-center gap-3">
+            <Link
+              href="/login"
+              className="rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-blue-400/40 hover:bg-white/10"
+            >
+              Login
+            </Link>
+            <a
+              href="#contacto"
+              className="rounded-xl border border-blue-400/40 bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-950/40 transition hover:bg-blue-500"
+            >
+              Cotizar
+            </a>
+          </div>
         </header>
 
         <div
