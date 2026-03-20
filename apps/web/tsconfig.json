@@ -1,25 +1,23 @@
 {
+  "extends": "../../packages/config/tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2022",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
     "noEmit": true,
-    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "baseUrl": ".",
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@satelite-guard/types": ["../../packages/types/src/index.ts"],
+      "@satelite-guard/ui": ["../../packages/ui/src/index.ts"]
     }
   },
   "include": [
@@ -30,5 +28,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "admin-gps", "apps", "packages"]
+  "exclude": ["node_modules"]
 }

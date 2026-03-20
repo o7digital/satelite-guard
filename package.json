@@ -1,12 +1,31 @@
 {
-  "name": "satelite-guuard",
+  "name": "satelite-guard",
   "version": "0.1.0",
   "private": true,
+  "description": "Satelite Guard repository with public landing page and premium GPS monitoring platform",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "dev": "next dev",
+    "dev:landing": "next dev",
+    "dev:platform": "concurrently -n web,api -c cyan,green \"npm:dev:web-admin\" \"npm:dev:api\"",
+    "dev:web-admin": "npm --workspace @satelite-guard/web run dev",
+    "dev:api": "npm --workspace @satelite-guard/api run start:dev",
     "build": "next build",
+    "build:landing": "next build",
+    "build:platform": "npm run prisma:generate && npm --workspace @satelite-guard/api run build && npm --workspace @satelite-guard/web run build",
     "start": "next start",
-    "lint": "eslint"
+    "start:landing": "next start",
+    "lint": "eslint app components eslint.config.mjs next.config.ts postcss.config.mjs",
+    "lint:landing": "eslint app components eslint.config.mjs next.config.ts postcss.config.mjs",
+    "lint:platform": "npm --workspace @satelite-guard/api run lint && npm --workspace @satelite-guard/web run lint",
+    "format:platform": "prettier --write \"README.md\" \".env.example\" \"apps/**/*.{ts,tsx,js,jsx,json,md}\" \"packages/**/*.{ts,tsx,js,json,md}\"",
+    "seed:platform": "npm --workspace @satelite-guard/api run seed",
+    "prisma:generate": "npm --workspace @satelite-guard/api run prisma:generate",
+    "prisma:push": "npm --workspace @satelite-guard/api run prisma:push",
+    "prisma:studio": "npm --workspace @satelite-guard/api run prisma:studio"
   },
   "dependencies": {
     "next": "16.2.0",
@@ -18,8 +37,10 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.0",
+    "prettier": "^3.5.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

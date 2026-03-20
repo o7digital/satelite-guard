@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  role         String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Device {
+  id          String     @id @default(cuid())
+  name        String
+  imei        String     @unique
+  simNumber   String?
+  plate       String?
+  provider    String
+  status      String
+  vehicleType String?
+  notes       String?
+  lastSeenAt  DateTime?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  positions   Position[]
+  trips       Trip[]
+  alerts      Alert[]
+}
+
+model Position {
+  id                String   @id @default(cuid())
+  deviceId          String
+  lat               Float
+  lng               Float
+  speed             Float?
+  heading           Float?
+  altitude          Float?
+  accuracy          Float?
+  ignition          Boolean?
+  battery           Float?
+  providerTimestamp DateTime?
+  receivedAt        DateTime @default(now())
+  rawPayload        Json?
+  device            Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@index([deviceId, receivedAt])
+}
+
+model Trip {
+  id          String   @id @default(cuid())
+  deviceId    String
+  startAt     DateTime
+  endAt       DateTime?
+  startLat    Float
+  startLng    Float
+  endLat      Float?
+  endLng      Float?
+  distanceKm  Float?
+  durationSec Int?
+  maxSpeed    Float?
+  avgSpeed    Float?
+  device      Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+}
+
+model Alert {
+  id             String    @id @default(cuid())
+  deviceId       String
+  type           String
+  severity       String
+  message        String
+  createdAt      DateTime  @default(now())
+  acknowledgedAt DateTime?
+  payloadJson    Json?
+  device         Device    @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+}

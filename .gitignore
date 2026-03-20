@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+**/node_modules
 /.pnp
 .pnp.*
 .yarn/*
@@ -15,10 +16,13 @@
 
 # next.js
 /.next/
+**/.next
 /out/
 
 # production
 /build
+**/dist
+**/coverage
 
 # misc
 .DS_Store
@@ -32,6 +36,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -39,3 +44,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local admin copies and generated backups
+/admin-gps
+.node_modules_failed_*
+**/.node_modules_failed_*
+apps/api/.dist_copied_backup
+apps/web/.next_copied_backup
+apps/web/.node_modules_copied_backup

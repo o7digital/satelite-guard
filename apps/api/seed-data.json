@@ -1,0 +1,826 @@
+{
+  "devices": [
+    {
+      "id": "dev-001",
+      "name": "Unidad Alpha",
+      "imei": "860012345678901",
+      "simNumber": "8952140001200000001",
+      "plate": "SG-101-A",
+      "provider": "iopgps",
+      "status": "online",
+      "lastSeenAt": "2026-03-20T21:55:38.066Z",
+      "vehicleType": "truck",
+      "assignedTo": "Operaciones Centro",
+      "notes": "Ruta urbana con sensor de ignición y corte remoto."
+    },
+    {
+      "id": "dev-002",
+      "name": "Custodia Delta",
+      "imei": "860012345678902",
+      "simNumber": "8952140001200000002",
+      "plate": "SG-204-D",
+      "provider": "iopgps",
+      "status": "online",
+      "lastSeenAt": "2026-03-20T21:54:38.066Z",
+      "vehicleType": "pickup",
+      "assignedTo": "Seguridad Norte",
+      "notes": "Unidad táctica con botón de pánico activo."
+    },
+    {
+      "id": "dev-003",
+      "name": "Logística Sierra",
+      "imei": "860012345678903",
+      "simNumber": "8952140001200000003",
+      "plate": "SG-330-L",
+      "provider": "iopgps",
+      "status": "idle",
+      "lastSeenAt": "2026-03-20T21:53:38.066Z",
+      "vehicleType": "van",
+      "assignedTo": "Distribución Metropolitana",
+      "notes": "Con geocercas de patios y horario restringido."
+    },
+    {
+      "id": "dev-004",
+      "name": "Patrulla Orbital",
+      "imei": "860012345678904",
+      "simNumber": "8952140001200000004",
+      "plate": "SG-450-P",
+      "provider": "iopgps",
+      "status": "online",
+      "lastSeenAt": "2026-03-20T21:52:38.066Z",
+      "vehicleType": "sedan",
+      "assignedTo": "Respuesta Ejecutiva",
+      "notes": "Configurada para seguimiento de ejecutivo y alertas silenciosas."
+    },
+    {
+      "id": "dev-005",
+      "name": "Activo Torre 7",
+      "imei": "860012345678905",
+      "simNumber": "8952140001200000005",
+      "plate": "SG-777-X",
+      "provider": "iopgps",
+      "status": "offline",
+      "lastSeenAt": "2026-03-20T21:09:38.066Z",
+      "vehicleType": "asset",
+      "assignedTo": "Infraestructura",
+      "notes": "Tracker para activo fijo con batería de respaldo extendida."
+    },
+    {
+      "id": "dev-006",
+      "name": "Moto Vector",
+      "imei": "860012345678906",
+      "simNumber": "8952140001200000006",
+      "plate": "SG-909-M",
+      "provider": "iopgps",
+      "status": "online",
+      "lastSeenAt": "2026-03-20T21:50:38.066Z",
+      "vehicleType": "motorbike",
+      "assignedTo": "Cobertura Express",
+      "notes": "Motocicleta de enlace con reportes cada 10 segundos."
+    }
+  ],
+  "positions": [
+    {
+      "id": "dev-001-pos-1",
+      "deviceId": "dev-001",
+      "lat": 19.4269,
+      "lng": -99.1686,
+      "speed": 23,
+      "heading": 180,
+      "altitude": 2240,
+      "accuracy": 4,
+      "ignition": false,
+      "battery": 92,
+      "providerTimestamp": "2026-03-20T21:36:38.066Z",
+      "receivedAt": "2026-03-20T21:36:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 11,
+        "hdop": 0.7
+      }
+    },
+    {
+      "id": "dev-001-pos-2",
+      "deviceId": "dev-001",
+      "lat": 19.4298,
+      "lng": -99.1601,
+      "speed": 19,
+      "heading": 251,
+      "altitude": 2242,
+      "accuracy": 5,
+      "ignition": true,
+      "battery": 90.5,
+      "providerTimestamp": "2026-03-20T21:40:38.066Z",
+      "receivedAt": "2026-03-20T21:40:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 12,
+        "hdop": 0.72
+      }
+    },
+    {
+      "id": "dev-001-pos-3",
+      "deviceId": "dev-001",
+      "lat": 19.4334,
+      "lng": -99.1517,
+      "speed": 31,
+      "heading": 247,
+      "altitude": 2244,
+      "accuracy": 6,
+      "ignition": true,
+      "battery": 89,
+      "providerTimestamp": "2026-03-20T21:44:38.066Z",
+      "receivedAt": "2026-03-20T21:44:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 13,
+        "hdop": 0.74
+      }
+    },
+    {
+      "id": "dev-001-pos-4",
+      "deviceId": "dev-001",
+      "lat": 19.4377,
+      "lng": -99.1445,
+      "speed": 27,
+      "heading": 239,
+      "altitude": 2246,
+      "accuracy": 4,
+      "ignition": true,
+      "battery": 87.5,
+      "providerTimestamp": "2026-03-20T21:48:38.066Z",
+      "receivedAt": "2026-03-20T21:48:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 14,
+        "hdop": 0.76
+      }
+    },
+    {
+      "id": "dev-001-pos-5",
+      "deviceId": "dev-001",
+      "lat": 19.4411,
+      "lng": -99.136,
+      "speed": 39,
+      "heading": 248,
+      "altitude": 2248,
+      "accuracy": 5,
+      "ignition": true,
+      "battery": 86,
+      "providerTimestamp": "2026-03-20T21:52:38.066Z",
+      "receivedAt": "2026-03-20T21:52:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 11,
+        "hdop": 0.7799999999999999
+      }
+    },
+    {
+      "id": "dev-002-pos-1",
+      "deviceId": "dev-002",
+      "lat": 19.4698,
+      "lng": -99.1983,
+      "speed": 23,
+      "heading": 180,
+      "altitude": 2240,
+      "accuracy": 4,
+      "ignition": false,
+      "battery": 88,
+      "providerTimestamp": "2026-03-20T21:36:38.066Z",
+      "receivedAt": "2026-03-20T21:36:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 11,
+        "hdop": 0.7
+      }
+    },
+    {
+      "id": "dev-002-pos-2",
+      "deviceId": "dev-002",
+      "lat": 19.4722,
+      "lng": -99.1917,
+      "speed": 19,
+      "heading": 250,
+      "altitude": 2242,
+      "accuracy": 5,
+      "ignition": true,
+      "battery": 86.5,
+      "providerTimestamp": "2026-03-20T21:40:38.066Z",
+      "receivedAt": "2026-03-20T21:40:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 12,
+        "hdop": 0.72
+      }
+    },
+    {
+      "id": "dev-002-pos-3",
+      "deviceId": "dev-002",
+      "lat": 19.4745,
+      "lng": -99.1862,
+      "speed": 31,
+      "heading": 247,
+      "altitude": 2244,
+      "accuracy": 6,
+      "ignition": true,
+      "battery": 85,
+      "providerTimestamp": "2026-03-20T21:44:38.066Z",
+      "receivedAt": "2026-03-20T21:44:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 13,
+        "hdop": 0.74
+      }
+    },
+    {
+      "id": "dev-002-pos-4",
+      "deviceId": "dev-002",
+      "lat": 19.4768,
+      "lng": -99.1821,
+      "speed": 27,
+      "heading": 241,
+      "altitude": 2246,
+      "accuracy": 4,
+      "ignition": true,
+      "battery": 83.5,
+      "providerTimestamp": "2026-03-20T21:48:38.066Z",
+      "receivedAt": "2026-03-20T21:48:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 14,
+        "hdop": 0.76
+      }
+    },
+    {
+      "id": "dev-002-pos-5",
+      "deviceId": "dev-002",
+      "lat": 19.4791,
+      "lng": -99.1782,
+      "speed": 39,
+      "heading": 239,
+      "altitude": 2248,
+      "accuracy": 5,
+      "ignition": true,
+      "battery": 82,
+      "providerTimestamp": "2026-03-20T21:52:38.066Z",
+      "receivedAt": "2026-03-20T21:52:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 11,
+        "hdop": 0.7799999999999999
+      }
+    },
+    {
+      "id": "dev-003-pos-1",
+      "deviceId": "dev-003",
+      "lat": 19.376,
+      "lng": -99.1024,
+      "speed": 23,
+      "heading": 180,
+      "altitude": 2240,
+      "accuracy": 4,
+      "ignition": false,
+      "battery": 75,
+      "providerTimestamp": "2026-03-20T21:36:38.066Z",
+      "receivedAt": "2026-03-20T21:36:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 11,
+        "hdop": 0.7
+      }
+    },
+    {
+      "id": "dev-003-pos-2",
+      "deviceId": "dev-003",
+      "lat": 19.3772,
+      "lng": -99.0983,
+      "speed": 19,
+      "heading": 254,
+      "altitude": 2242,
+      "accuracy": 5,
+      "ignition": true,
+      "battery": 73.5,
+      "providerTimestamp": "2026-03-20T21:40:38.066Z",
+      "receivedAt": "2026-03-20T21:40:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 12,
+        "hdop": 0.72
+      }
+    },
+    {
+      "id": "dev-003-pos-3",
+      "deviceId": "dev-003",
+      "lat": 19.3787,
+      "lng": -99.0941,
+      "speed": 31,
+      "heading": 250,
+      "altitude": 2244,
+      "accuracy": 6,
+      "ignition": true,
+      "battery": 72,
+      "providerTimestamp": "2026-03-20T21:44:38.066Z",
+      "receivedAt": "2026-03-20T21:44:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 13,
+        "hdop": 0.74
+      }
+    },
+    {
+      "id": "dev-003-pos-4",
+      "deviceId": "dev-003",
+      "lat": 19.3798,
+      "lng": -99.0918,
+      "speed": 27,
+      "heading": 244,
+      "altitude": 2246,
+      "accuracy": 4,
+      "ignition": true,
+      "battery": 70.5,
+      "providerTimestamp": "2026-03-20T21:48:38.066Z",
+      "receivedAt": "2026-03-20T21:48:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 14,
+        "hdop": 0.76
+      }
+    },
+    {
+      "id": "dev-003-pos-5",
+      "deviceId": "dev-003",
+      "lat": 19.3801,
+      "lng": -99.0906,
+      "speed": 39,
+      "heading": 256,
+      "altitude": 2248,
+      "accuracy": 5,
+      "ignition": true,
+      "battery": 69,
+      "providerTimestamp": "2026-03-20T21:52:38.066Z",
+      "receivedAt": "2026-03-20T21:52:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 11,
+        "hdop": 0.7799999999999999
+      }
+    },
+    {
+      "id": "dev-004-pos-1",
+      "deviceId": "dev-004",
+      "lat": 20.6682,
+      "lng": -103.3631,
+      "speed": 23,
+      "heading": 180,
+      "altitude": 2240,
+      "accuracy": 4,
+      "ignition": false,
+      "battery": 81,
+      "providerTimestamp": "2026-03-20T21:36:38.066Z",
+      "receivedAt": "2026-03-20T21:36:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 11,
+        "hdop": 0.7
+      }
+    },
+    {
+      "id": "dev-004-pos-2",
+      "deviceId": "dev-004",
+      "lat": 20.6698,
+      "lng": -103.3575,
+      "speed": 19,
+      "heading": 254,
+      "altitude": 2242,
+      "accuracy": 5,
+      "ignition": true,
+      "battery": 79.5,
+      "providerTimestamp": "2026-03-20T21:40:38.066Z",
+      "receivedAt": "2026-03-20T21:40:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 12,
+        "hdop": 0.72
+      }
+    },
+    {
+      "id": "dev-004-pos-3",
+      "deviceId": "dev-004",
+      "lat": 20.6711,
+      "lng": -103.351,
+      "speed": 31,
+      "heading": 259,
+      "altitude": 2244,
+      "accuracy": 6,
+      "ignition": true,
+      "battery": 78,
+      "providerTimestamp": "2026-03-20T21:44:38.066Z",
+      "receivedAt": "2026-03-20T21:44:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 13,
+        "hdop": 0.74
+      }
+    },
+    {
+      "id": "dev-004-pos-4",
+      "deviceId": "dev-004",
+      "lat": 20.6725,
+      "lng": -103.3473,
+      "speed": 27,
+      "heading": 249,
+      "altitude": 2246,
+      "accuracy": 4,
+      "ignition": true,
+      "battery": 76.5,
+      "providerTimestamp": "2026-03-20T21:48:38.066Z",
+      "receivedAt": "2026-03-20T21:48:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 14,
+        "hdop": 0.76
+      }
+    },
+    {
+      "id": "dev-004-pos-5",
+      "deviceId": "dev-004",
+      "lat": 20.6731,
+      "lng": -103.3449,
+      "speed": 39,
+      "heading": 256,
+      "altitude": 2248,
+      "accuracy": 5,
+      "ignition": true,
+      "battery": 75,
+      "providerTimestamp": "2026-03-20T21:52:38.066Z",
+      "receivedAt": "2026-03-20T21:52:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 11,
+        "hdop": 0.7799999999999999
+      }
+    },
+    {
+      "id": "dev-005-pos-1",
+      "deviceId": "dev-005",
+      "lat": 25.6842,
+      "lng": -100.325,
+      "speed": 23,
+      "heading": 180,
+      "altitude": 2240,
+      "accuracy": 4,
+      "ignition": false,
+      "battery": 58,
+      "providerTimestamp": "2026-03-20T21:36:38.066Z",
+      "receivedAt": "2026-03-20T21:36:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 11,
+        "hdop": 0.7
+      }
+    },
+    {
+      "id": "dev-005-pos-2",
+      "deviceId": "dev-005",
+      "lat": 25.6842,
+      "lng": -100.325,
+      "speed": 19,
+      "heading": 180,
+      "altitude": 2242,
+      "accuracy": 5,
+      "ignition": true,
+      "battery": 56.5,
+      "providerTimestamp": "2026-03-20T21:40:38.066Z",
+      "receivedAt": "2026-03-20T21:40:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 12,
+        "hdop": 0.72
+      }
+    },
+    {
+      "id": "dev-005-pos-3",
+      "deviceId": "dev-005",
+      "lat": 25.6842,
+      "lng": -100.325,
+      "speed": 31,
+      "heading": 180,
+      "altitude": 2244,
+      "accuracy": 6,
+      "ignition": true,
+      "battery": 55,
+      "providerTimestamp": "2026-03-20T21:44:38.066Z",
+      "receivedAt": "2026-03-20T21:44:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 13,
+        "hdop": 0.74
+      }
+    },
+    {
+      "id": "dev-005-pos-4",
+      "deviceId": "dev-005",
+      "lat": 25.6842,
+      "lng": -100.325,
+      "speed": 27,
+      "heading": 180,
+      "altitude": 2246,
+      "accuracy": 4,
+      "ignition": true,
+      "battery": 53.5,
+      "providerTimestamp": "2026-03-20T21:48:38.066Z",
+      "receivedAt": "2026-03-20T21:48:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 14,
+        "hdop": 0.76
+      }
+    },
+    {
+      "id": "dev-005-pos-5",
+      "deviceId": "dev-005",
+      "lat": 25.6842,
+      "lng": -100.325,
+      "speed": 39,
+      "heading": 180,
+      "altitude": 2248,
+      "accuracy": 5,
+      "ignition": true,
+      "battery": 52,
+      "providerTimestamp": "2026-03-20T21:52:38.066Z",
+      "receivedAt": "2026-03-20T21:52:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 11,
+        "hdop": 0.7799999999999999
+      }
+    },
+    {
+      "id": "dev-006-pos-1",
+      "deviceId": "dev-006",
+      "lat": 19.4011,
+      "lng": -99.1874,
+      "speed": 23,
+      "heading": 180,
+      "altitude": 2240,
+      "accuracy": 4,
+      "ignition": false,
+      "battery": 69,
+      "providerTimestamp": "2026-03-20T21:36:38.066Z",
+      "receivedAt": "2026-03-20T21:36:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 11,
+        "hdop": 0.7
+      }
+    },
+    {
+      "id": "dev-006-pos-2",
+      "deviceId": "dev-006",
+      "lat": 19.4037,
+      "lng": -99.1846,
+      "speed": 19,
+      "heading": 227,
+      "altitude": 2242,
+      "accuracy": 5,
+      "ignition": true,
+      "battery": 67.5,
+      "providerTimestamp": "2026-03-20T21:40:38.066Z",
+      "receivedAt": "2026-03-20T21:40:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 12,
+        "hdop": 0.72
+      }
+    },
+    {
+      "id": "dev-006-pos-3",
+      "deviceId": "dev-006",
+      "lat": 19.4052,
+      "lng": -99.1828,
+      "speed": 31,
+      "heading": 230,
+      "altitude": 2244,
+      "accuracy": 6,
+      "ignition": true,
+      "battery": 66,
+      "providerTimestamp": "2026-03-20T21:44:38.066Z",
+      "receivedAt": "2026-03-20T21:44:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 13,
+        "hdop": 0.74
+      }
+    },
+    {
+      "id": "dev-006-pos-4",
+      "deviceId": "dev-006",
+      "lat": 19.4064,
+      "lng": -99.1806,
+      "speed": 27,
+      "heading": 241,
+      "altitude": 2246,
+      "accuracy": 4,
+      "ignition": true,
+      "battery": 64.5,
+      "providerTimestamp": "2026-03-20T21:48:38.066Z",
+      "receivedAt": "2026-03-20T21:48:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 14,
+        "hdop": 0.76
+      }
+    },
+    {
+      "id": "dev-006-pos-5",
+      "deviceId": "dev-006",
+      "lat": 19.4069,
+      "lng": -99.1797,
+      "speed": 39,
+      "heading": 241,
+      "altitude": 2248,
+      "accuracy": 5,
+      "ignition": true,
+      "battery": 63,
+      "providerTimestamp": "2026-03-20T21:52:38.066Z",
+      "receivedAt": "2026-03-20T21:52:48.066Z",
+      "rawPayload": {
+        "source": "mock-engine",
+        "satellites": 11,
+        "hdop": 0.7799999999999999
+      }
+    }
+  ],
+  "trips": [
+    {
+      "id": "dev-001-trip-1",
+      "deviceId": "dev-001",
+      "startAt": "2026-03-20T21:36:38.066Z",
+      "endAt": "2026-03-20T21:52:38.066Z",
+      "startLat": 19.4269,
+      "startLng": -99.1686,
+      "endLat": 19.4411,
+      "endLng": -99.136,
+      "distanceKm": 8.5,
+      "durationSec": 2400,
+      "maxSpeed": 39,
+      "avgSpeed": 27.8
+    },
+    {
+      "id": "dev-002-trip-2",
+      "deviceId": "dev-002",
+      "startAt": "2026-03-20T21:36:38.066Z",
+      "endAt": "2026-03-20T21:52:38.066Z",
+      "startLat": 19.4698,
+      "startLng": -99.1983,
+      "endLat": 19.4791,
+      "endLng": -99.1782,
+      "distanceKm": 11.7,
+      "durationSec": 3180,
+      "maxSpeed": 39,
+      "avgSpeed": 27.8
+    },
+    {
+      "id": "dev-003-trip-3",
+      "deviceId": "dev-003",
+      "startAt": "2026-03-20T21:36:38.066Z",
+      "endAt": "2026-03-20T21:52:38.066Z",
+      "startLat": 19.376,
+      "startLng": -99.1024,
+      "endLat": 19.3801,
+      "endLng": -99.0906,
+      "distanceKm": 14.9,
+      "durationSec": 3960,
+      "maxSpeed": 39,
+      "avgSpeed": 27.8
+    },
+    {
+      "id": "dev-004-trip-4",
+      "deviceId": "dev-004",
+      "startAt": "2026-03-20T21:36:38.066Z",
+      "endAt": "2026-03-20T21:52:38.066Z",
+      "startLat": 20.6682,
+      "startLng": -103.3631,
+      "endLat": 20.6731,
+      "endLng": -103.3449,
+      "distanceKm": 18.1,
+      "durationSec": 4740,
+      "maxSpeed": 39,
+      "avgSpeed": 27.8
+    },
+    {
+      "id": "dev-006-trip-5",
+      "deviceId": "dev-006",
+      "startAt": "2026-03-20T21:36:38.066Z",
+      "endAt": "2026-03-20T21:52:38.066Z",
+      "startLat": 19.4011,
+      "startLng": -99.1874,
+      "endLat": 19.4069,
+      "endLng": -99.1797,
+      "distanceKm": 21.3,
+      "durationSec": 5520,
+      "maxSpeed": 39,
+      "avgSpeed": 27.8
+    }
+  ],
+  "geofences": [
+    {
+      "id": "geo-001",
+      "name": "Patio Central Satelite Guard",
+      "type": "circle",
+      "centerLat": 19.4326,
+      "centerLng": -99.1332,
+      "radiusMeters": 450,
+      "polygonJson": null,
+      "active": true
+    },
+    {
+      "id": "geo-002",
+      "name": "Corredor Logístico Norte",
+      "type": "polygon",
+      "centerLat": null,
+      "centerLng": null,
+      "radiusMeters": null,
+      "polygonJson": [
+        [
+          19.4881,
+          -99.2094
+        ],
+        [
+          19.5021,
+          -99.1844
+        ],
+        [
+          19.4968,
+          -99.1529
+        ],
+        [
+          19.478,
+          -99.1642
+        ]
+      ],
+      "active": true
+    },
+    {
+      "id": "geo-003",
+      "name": "Resguardo Ejecutivo Occidente",
+      "type": "circle",
+      "centerLat": 20.6736,
+      "centerLng": -103.344,
+      "radiusMeters": 320,
+      "polygonJson": null,
+      "active": true
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alert-001",
+      "deviceId": "dev-002",
+      "type": "panic",
+      "severity": "critical",
+      "message": "Botón de pánico activado en Custodia Delta.",
+      "createdAt": "2026-03-20T21:42:38.066Z",
+      "acknowledgedAt": null,
+      "payloadJson": {
+        "source": "panic-button",
+        "escalation": "dispatch"
+      }
+    },
+    {
+      "id": "alert-002",
+      "deviceId": "dev-003",
+      "type": "after-hours",
+      "severity": "medium",
+      "message": "Movimiento detectado fuera de horario operativo.",
+      "createdAt": "2026-03-20T21:25:38.066Z",
+      "acknowledgedAt": "2026-03-20T21:37:38.066Z",
+      "payloadJson": {
+        "zone": "Corredor Logístico Norte"
+      }
+    },
+    {
+      "id": "alert-003",
+      "deviceId": "dev-005",
+      "type": "offline",
+      "severity": "high",
+      "message": "Activo Torre 7 perdió comunicación con el proveedor.",
+      "createdAt": "2026-03-20T21:04:38.066Z",
+      "acknowledgedAt": null,
+      "payloadJson": {
+        "lastBattery": 58
+      }
+    },
+    {
+      "id": "alert-004",
+      "deviceId": "dev-001",
+      "type": "geofence-exit",
+      "severity": "low",
+      "message": "Unidad Alpha salió del perímetro autorizado.",
+      "createdAt": "2026-03-20T21:47:38.066Z",
+      "acknowledgedAt": null,
+      "payloadJson": {
+        "geofenceId": "geo-001"
+      }
+    }
+  ]
+}
