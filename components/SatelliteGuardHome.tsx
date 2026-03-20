@@ -46,7 +46,7 @@ export default function SatelliteGuardHome() {
 
         <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
           <div className="flex items-center gap-3">
-            <div className="flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-2xl bg-blue-600/20 text-[2.5rem] ring-1 ring-blue-400/30">
+            <div className="flex h-[11rem] w-[11rem] items-center justify-center rounded-2xl bg-blue-600/20 text-[5rem] ring-1 ring-blue-400/30">
               🛰️
             </div>
             <div>
