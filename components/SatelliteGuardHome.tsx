@@ -108,7 +108,7 @@ export default function SatelliteGuardPremiumMockup() {
 
             <div className="relative hidden lg:block">
               <div className="absolute right-[-4%] top-[8%] h-[30rem] w-[30rem] rounded-full bg-cyan-400/8 blur-3xl" />
-              <div className="relative ml-auto mt-80 w-full max-w-[42rem] xl:mt-96">
+              <div className="relative ml-auto mt-[40rem] w-full max-w-[42rem] xl:mt-[48rem]">
                 <div className="rounded-[2.5rem] border border-white/10 bg-[#07101c]/40 p-4 shadow-[0_30px_120px_rgba(0,0,0,0.55)] backdrop-blur-2xl">
                   <div className="relative h-[38rem] overflow-hidden rounded-[2rem]">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_25%,rgba(34,211,238,0.12),transparent_14%),radial-gradient(circle_at_75%_22%,rgba(251,191,36,0.10),transparent_16%),linear-gradient(180deg,rgba(3,7,18,0.08),rgba(3,7,18,0.34))]" />
