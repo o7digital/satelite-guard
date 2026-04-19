@@ -46,8 +46,8 @@ export default function SatelliteGuardPremiumMockup() {
   return (
     <div className="min-h-screen overflow-hidden bg-[#02050b] text-white">
       <section className="relative isolate min-h-screen border-b border-white/10 bg-[#02050b]">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-center opacity-30" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,3,9,0.96)_0%,rgba(1,3,9,0.78)_36%,rgba(1,3,9,0.52)_58%,rgba(1,3,9,0.88)_100%)]" />
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-[70%_center] opacity-55" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,3,9,0.88)_0%,rgba(1,3,9,0.62)_36%,rgba(1,3,9,0.30)_58%,rgba(1,3,9,0.56)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(251,191,36,0.18),transparent_16%),radial-gradient(circle_at_82%_20%,rgba(34,211,238,0.14),transparent_18%),radial-gradient(circle_at_56%_72%,rgba(15,23,42,0.42),transparent_36%)]" />
         <div className="absolute inset-0 opacity-[0.12] bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:54px_54px]" />
         <div className="absolute left-[-8%] top-[-12%] h-[34rem] w-[34rem] rounded-full bg-amber-300/10 blur-3xl" />
@@ -72,7 +72,7 @@ export default function SatelliteGuardPremiumMockup() {
             </div>
           </header>
 
-          <div className="relative grid flex-1 items-center gap-14 pb-14 pt-56 lg:grid-cols-[0.9fr_1.1fr] lg:pb-20 lg:pt-[32rem] xl:pb-24 xl:pt-[38rem]">
+          <div className="relative grid flex-1 items-center gap-14 py-20 lg:min-h-[88vh] lg:grid-cols-[0.95fr_1.05fr] lg:py-24 xl:py-28">
             <div className="relative z-10 max-w-3xl">
               <div className="mb-5 inline-flex items-center rounded-full border border-amber-300/20 bg-amber-300/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-amber-200">
                 Seguridad · Inteligencia · Control total
@@ -108,12 +108,12 @@ export default function SatelliteGuardPremiumMockup() {
 
             <div className="relative hidden lg:block">
               <div className="absolute right-[-4%] top-[8%] h-[30rem] w-[30rem] rounded-full bg-cyan-400/8 blur-3xl" />
-              <div className="relative ml-auto w-full max-w-[42rem]">
-                <div className="rounded-[2.5rem] border border-white/10 bg-[#07101c]/58 p-4 shadow-[0_30px_120px_rgba(0,0,0,0.55)] backdrop-blur-2xl">
+              <div className="relative ml-auto mt-24 w-full max-w-[42rem] xl:mt-32">
+                <div className="rounded-[2.5rem] border border-white/10 bg-[#07101c]/40 p-4 shadow-[0_30px_120px_rgba(0,0,0,0.55)] backdrop-blur-2xl">
                   <div className="relative h-[38rem] overflow-hidden rounded-[2rem]">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_25%,rgba(34,211,238,0.20),transparent_14%),radial-gradient(circle_at_75%_22%,rgba(251,191,36,0.18),transparent_16%),linear-gradient(180deg,rgba(3,7,18,0.2),rgba(3,7,18,0.68))]" />
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80')] bg-cover bg-center opacity-20" />
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(2,6,23,0.84),rgba(2,6,23,0.36),rgba(2,6,23,0.76))]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_25%,rgba(34,211,238,0.12),transparent_14%),radial-gradient(circle_at_75%_22%,rgba(251,191,36,0.10),transparent_16%),linear-gradient(180deg,rgba(3,7,18,0.08),rgba(3,7,18,0.34))]" />
+                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80')] bg-cover bg-[70%_center] opacity-55" />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(2,6,23,0.64),rgba(2,6,23,0.18),rgba(2,6,23,0.44))]" />
 
                     <div className="absolute left-5 right-5 top-5 flex items-start justify-between gap-4">
                       <div className="rounded-2xl border border-white/10 bg-[#07101c]/80 px-4 py-3 backdrop-blur-xl">
