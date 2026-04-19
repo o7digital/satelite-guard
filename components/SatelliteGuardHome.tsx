@@ -72,7 +72,7 @@ export default function SatelliteGuardPremiumMockup() {
             </div>
           </header>
 
-          <div className="relative grid flex-1 items-center gap-14 py-20 lg:min-h-[88vh] lg:grid-cols-[0.95fr_1.05fr] lg:py-24 xl:py-28">
+          <div className="relative grid flex-1 items-center gap-14 pb-14 pt-44 lg:min-h-[110vh] lg:grid-cols-[0.95fr_1.05fr] lg:pb-24 lg:pt-[30rem] xl:pb-28 xl:pt-[34rem]">
             <div className="relative z-10 max-w-3xl">
               <div className="mb-5 inline-flex items-center rounded-full border border-amber-300/20 bg-amber-300/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-amber-200">
                 Seguridad · Inteligencia · Control total
