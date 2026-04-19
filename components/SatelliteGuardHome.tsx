@@ -45,13 +45,15 @@ export default function SatelliteGuardPremiumMockup() {
 
   return (
     <div className="min-h-screen overflow-hidden bg-[#02050b] text-white">
-      <section className="relative isolate border-b border-white/10 bg-[linear-gradient(180deg,#02050b_0%,#07111d_45%,#030814_100%)]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(251,191,36,0.16),transparent_18%),radial-gradient(circle_at_82%_22%,rgba(34,211,238,0.16),transparent_18%),radial-gradient(circle_at_52%_70%,rgba(15,23,42,0.4),transparent_38%)]" />
-        <div className="absolute inset-0 opacity-[0.14] bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:54px_54px]" />
-        <div className="absolute left-[-8%] top-[-12%] h-[32rem] w-[32rem] rounded-full bg-amber-300/10 blur-3xl" />
-        <div className="absolute right-[-10%] top-[8%] h-[28rem] w-[28rem] rounded-full bg-cyan-400/10 blur-3xl" />
+      <section className="relative isolate min-h-screen border-b border-white/10 bg-[#02050b]">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-center opacity-30" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,3,9,0.96)_0%,rgba(1,3,9,0.78)_36%,rgba(1,3,9,0.52)_58%,rgba(1,3,9,0.88)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(251,191,36,0.18),transparent_16%),radial-gradient(circle_at_82%_20%,rgba(34,211,238,0.14),transparent_18%),radial-gradient(circle_at_56%_72%,rgba(15,23,42,0.42),transparent_36%)]" />
+        <div className="absolute inset-0 opacity-[0.12] bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:54px_54px]" />
+        <div className="absolute left-[-8%] top-[-12%] h-[34rem] w-[34rem] rounded-full bg-amber-300/10 blur-3xl" />
+        <div className="absolute right-[-10%] top-[6%] h-[30rem] w-[30rem] rounded-full bg-cyan-400/10 blur-3xl" />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-6 lg:px-10">
+        <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col px-6 py-6 lg:px-10">
           <header className="flex items-center justify-between rounded-full border border-white/10 bg-white/[0.06] px-5 py-3 shadow-2xl shadow-black/30 backdrop-blur-2xl">
             <div>
               <div className="text-xs uppercase tracking-[0.38em] text-amber-300/85">Satellite Guard</div>
@@ -70,19 +72,19 @@ export default function SatelliteGuardPremiumMockup() {
             </div>
           </header>
 
-          <div className="grid items-center gap-14 py-16 lg:grid-cols-[0.95fr_1.05fr] lg:py-24 xl:py-28">
-            <div className="relative z-10">
+          <div className="relative grid flex-1 items-center gap-14 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:py-20 xl:py-24">
+            <div className="relative z-10 max-w-3xl">
               <div className="mb-5 inline-flex items-center rounded-full border border-amber-300/20 bg-amber-300/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-amber-200">
                 Seguridad · Inteligencia · Control total
               </div>
-              <h1 className="max-w-4xl text-5xl font-semibold leading-[0.94] tracking-tight md:text-6xl xl:text-7xl">
+              <h1 className="text-5xl font-semibold leading-[0.92] tracking-tight md:text-6xl xl:text-[5.35rem]">
                 Monitoreo GPS con una presencia
                 <span className="block bg-gradient-to-r from-white via-amber-200 to-cyan-200 bg-clip-text text-transparent">
-                  claramente más premium.
+                  ultra premium y mucho más exclusiva.
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/68">
-                Esta V3 empuja Satellite Guard hacia una imagen de marca más aspiracional: vigilancia ejecutiva, tecnología de precisión y control visual con sensación de centro de comando de alto nivel.
+                La V4 lleva Satellite Guard a una estética más aspiracional y más fuerte comercialmente: vigilancia ejecutiva, tecnología de precisión y una imagen de marca que sí parece de alto nivel.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
@@ -96,7 +98,7 @@ export default function SatelliteGuardPremiumMockup() {
 
               <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
                 {stats.map((item) => (
-                  <div key={item.label} className="rounded-[1.35rem] border border-white/10 bg-white/[0.05] p-4 shadow-xl shadow-black/20 backdrop-blur-xl">
+                  <div key={item.label} className="rounded-[1.35rem] border border-white/10 bg-black/30 p-4 shadow-xl shadow-black/30 backdrop-blur-xl">
                     <div className="text-2xl font-semibold text-white">{item.value}</div>
                     <div className="mt-1 text-sm text-white/55">{item.label}</div>
                   </div>
@@ -104,88 +106,89 @@ export default function SatelliteGuardPremiumMockup() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="absolute -inset-6 rounded-[2.8rem] bg-gradient-to-r from-amber-300/10 via-transparent to-cyan-300/10 blur-3xl" />
+            <div className="relative hidden lg:block">
+              <div className="absolute right-[-4%] top-[8%] h-[30rem] w-[30rem] rounded-full bg-cyan-400/8 blur-3xl" />
+              <div className="relative ml-auto w-full max-w-[42rem]">
+                <div className="rounded-[2.5rem] border border-white/10 bg-[#07101c]/58 p-4 shadow-[0_30px_120px_rgba(0,0,0,0.55)] backdrop-blur-2xl">
+                  <div className="relative h-[38rem] overflow-hidden rounded-[2rem]">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_25%,rgba(34,211,238,0.20),transparent_14%),radial-gradient(circle_at_75%_22%,rgba(251,191,36,0.18),transparent_16%),linear-gradient(180deg,rgba(3,7,18,0.2),rgba(3,7,18,0.68))]" />
+                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80')] bg-cover bg-center opacity-20" />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(2,6,23,0.84),rgba(2,6,23,0.36),rgba(2,6,23,0.76))]" />
 
-              <div className="relative overflow-hidden rounded-[2.4rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] shadow-[0_30px_120px_rgba(0,0,0,0.45)] backdrop-blur-2xl">
-                <div className="relative h-[38rem] overflow-hidden">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_25%,rgba(34,211,238,0.20),transparent_14%),radial-gradient(circle_at_75%_22%,rgba(251,191,36,0.18),transparent_16%),linear-gradient(180deg,rgba(3,7,18,0.2),rgba(3,7,18,0.68))]" />
-                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80')] bg-cover bg-center opacity-20" />
-                  <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(2,6,23,0.84),rgba(2,6,23,0.36),rgba(2,6,23,0.76))]" />
-
-                  <div className="absolute left-5 right-5 top-5 flex items-start justify-between gap-4">
-                    <div className="rounded-2xl border border-white/10 bg-[#07101c]/80 px-4 py-3 backdrop-blur-xl">
-                      <div className="text-[11px] uppercase tracking-[0.24em] text-white/45">Satellite view</div>
-                      <div className="mt-1 text-lg font-semibold">Fleet Command</div>
+                    <div className="absolute left-5 right-5 top-5 flex items-start justify-between gap-4">
+                      <div className="rounded-2xl border border-white/10 bg-[#07101c]/80 px-4 py-3 backdrop-blur-xl">
+                        <div className="text-[11px] uppercase tracking-[0.24em] text-white/45">Satellite view</div>
+                        <div className="mt-1 text-lg font-semibold">Fleet Command</div>
+                      </div>
+                      <div className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs text-emerald-300">
+                        Operativo en línea
+                      </div>
                     </div>
-                    <div className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs text-emerald-300">
-                      Operativo en línea
-                    </div>
-                  </div>
 
-                  <div className="absolute inset-x-6 top-24 bottom-6 grid gap-4 lg:grid-cols-[1.1fr_0.62fr]">
-                    <div className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(7,16,28,0.76),rgba(8,18,33,0.88))] p-5">
-                      <div className="mb-4 flex items-center justify-between">
-                        <div>
-                          <div className="text-sm text-white/45">Vista geoespacial</div>
-                          <div className="text-xl font-semibold">Cobertura táctica de unidades</div>
+                    <div className="absolute inset-x-6 top-24 bottom-6 grid gap-4 lg:grid-cols-[1.1fr_0.62fr]">
+                      <div className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(7,16,28,0.76),rgba(8,18,33,0.88))] p-5">
+                        <div className="mb-4 flex items-center justify-between">
+                          <div>
+                            <div className="text-sm text-white/45">Vista geoespacial</div>
+                            <div className="text-xl font-semibold">Cobertura táctica de unidades</div>
+                          </div>
+                          <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-cyan-200">GPS · IoT · Satellite</div>
                         </div>
-                        <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-cyan-200">GPS · IoT · Satellite</div>
-                      </div>
 
-                      <div className="relative h-[24rem] overflow-hidden rounded-[1.5rem] border border-white/10 bg-[radial-gradient(circle_at_24%_26%,rgba(34,211,238,0.26),transparent_13%),radial-gradient(circle_at_73%_46%,rgba(251,191,36,0.18),transparent_15%),radial-gradient(circle_at_67%_76%,rgba(16,185,129,0.14),transparent_16%),linear-gradient(180deg,#07101c,#10203a)]">
-                        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:34px_34px] opacity-25" />
-                        <div className="absolute left-[12%] top-[22%] h-4 w-4 rounded-full bg-amber-300 shadow-[0_0_30px_rgba(252,211,77,0.95)]" />
-                        <div className="absolute left-[38%] top-[42%] h-4 w-4 rounded-full bg-cyan-300 shadow-[0_0_30px_rgba(103,232,249,0.95)]" />
-                        <div className="absolute left-[72%] top-[58%] h-4 w-4 rounded-full bg-emerald-300 shadow-[0_0_28px_rgba(110,231,183,0.95)]" />
-                        <div className="absolute left-[58%] top-[24%] h-3.5 w-3.5 rounded-full bg-white shadow-[0_0_22px_rgba(255,255,255,0.92)]" />
-                        <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                          <path d="M12 22 C 18 24, 24 30, 38 42 S 56 48, 72 58" fill="none" stroke="rgba(255,255,255,0.44)" strokeWidth="1.15" strokeDasharray="4 3" />
-                          <path d="M58 24 C 50 28, 45 34, 38 42" fill="none" stroke="rgba(34,211,238,0.42)" strokeWidth="1.15" strokeDasharray="4 3" />
-                        </svg>
+                        <div className="relative h-[24rem] overflow-hidden rounded-[1.5rem] border border-white/10 bg-[radial-gradient(circle_at_24%_26%,rgba(34,211,238,0.26),transparent_13%),radial-gradient(circle_at_73%_46%,rgba(251,191,36,0.18),transparent_15%),radial-gradient(circle_at_67%_76%,rgba(16,185,129,0.14),transparent_16%),linear-gradient(180deg,#07101c,#10203a)]">
+                          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:34px_34px] opacity-25" />
+                          <div className="absolute left-[12%] top-[22%] h-4 w-4 rounded-full bg-amber-300 shadow-[0_0_30px_rgba(252,211,77,0.95)]" />
+                          <div className="absolute left-[38%] top-[42%] h-4 w-4 rounded-full bg-cyan-300 shadow-[0_0_30px_rgba(103,232,249,0.95)]" />
+                          <div className="absolute left-[72%] top-[58%] h-4 w-4 rounded-full bg-emerald-300 shadow-[0_0_28px_rgba(110,231,183,0.95)]" />
+                          <div className="absolute left-[58%] top-[24%] h-3.5 w-3.5 rounded-full bg-white shadow-[0_0_22px_rgba(255,255,255,0.92)]" />
+                          <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M12 22 C 18 24, 24 30, 38 42 S 56 48, 72 58" fill="none" stroke="rgba(255,255,255,0.44)" strokeWidth="1.15" strokeDasharray="4 3" />
+                            <path d="M58 24 C 50 28, 45 34, 38 42" fill="none" stroke="rgba(34,211,238,0.42)" strokeWidth="1.15" strokeDasharray="4 3" />
+                          </svg>
 
-                        <div className="absolute bottom-4 left-4 rounded-2xl border border-white/10 bg-[#07101c]/85 px-4 py-3 backdrop-blur-xl">
-                          <div className="text-[11px] uppercase tracking-[0.22em] text-white/40">Unidad prioritaria</div>
-                          <div className="mt-1 text-sm font-semibold">SUV Executive 07</div>
-                          <div className="text-xs text-white/50">Ruta monitoreada en tiempo real</div>
+                          <div className="absolute bottom-4 left-4 rounded-2xl border border-white/10 bg-[#07101c]/85 px-4 py-3 backdrop-blur-xl">
+                            <div className="text-[11px] uppercase tracking-[0.22em] text-white/40">Unidad prioritaria</div>
+                            <div className="mt-1 text-sm font-semibold">SUV Executive 07</div>
+                            <div className="text-xs text-white/50">Ruta monitoreada en tiempo real</div>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div className="grid gap-4">
-                      <div className="rounded-[1.6rem] border border-white/10 bg-[#07101c]/78 p-5 backdrop-blur-xl">
-                        <div className="text-sm text-white/45">Alertas críticas</div>
-                        <div className="mt-2 text-3xl font-semibold">03</div>
-                        <p className="mt-2 text-sm leading-6 text-white/58">
-                          Eventos de alta prioridad con seguimiento inmediato y protocolo activo.
-                        </p>
-                      </div>
+                      <div className="grid gap-4">
+                        <div className="rounded-[1.6rem] border border-white/10 bg-[#07101c]/78 p-5 backdrop-blur-xl">
+                          <div className="text-sm text-white/45">Alertas críticas</div>
+                          <div className="mt-2 text-3xl font-semibold">03</div>
+                          <p className="mt-2 text-sm leading-6 text-white/58">
+                            Eventos de alta prioridad con seguimiento inmediato y protocolo activo.
+                          </p>
+                        </div>
 
-                      <div className="rounded-[1.6rem] border border-white/10 bg-[#07101c]/78 p-5 backdrop-blur-xl">
-                        <div className="text-sm text-white/45">Última incidencia</div>
-                        <div className="mt-2 text-lg font-semibold">Movimiento no autorizado</div>
-                        <p className="mt-2 text-sm leading-6 text-white/58">
-                          Desvío fuera de geocerca. Traza registrada y operador notificado.
-                        </p>
-                      </div>
+                        <div className="rounded-[1.6rem] border border-white/10 bg-[#07101c]/78 p-5 backdrop-blur-xl">
+                          <div className="text-sm text-white/45">Última incidencia</div>
+                          <div className="mt-2 text-lg font-semibold">Movimiento no autorizado</div>
+                          <p className="mt-2 text-sm leading-6 text-white/58">
+                            Desvío fuera de geocerca. Traza registrada y operador notificado.
+                          </p>
+                        </div>
 
-                      <div className="rounded-[1.6rem] border border-white/10 bg-[#07101c]/78 p-5 backdrop-blur-xl">
-                        <div className="text-sm text-white/45">Estatus ejecutivo</div>
-                        <div className="mt-4 space-y-3 text-sm text-white/60">
-                          <div className="flex items-center justify-between"><span>Unidades activas</span><span className="font-semibold text-white">126</span></div>
-                          <div className="flex items-center justify-between"><span>Geocercas activas</span><span className="font-semibold text-white">41</span></div>
-                          <div className="flex items-center justify-between"><span>Rutas vigiladas</span><span className="font-semibold text-white">18</span></div>
+                        <div className="rounded-[1.6rem] border border-white/10 bg-[#07101c]/78 p-5 backdrop-blur-xl">
+                          <div className="text-sm text-white/45">Estatus ejecutivo</div>
+                          <div className="mt-4 space-y-3 text-sm text-white/60">
+                            <div className="flex items-center justify-between"><span>Unidades activas</span><span className="font-semibold text-white">126</span></div>
+                            <div className="flex items-center justify-between"><span>Geocercas activas</span><span className="font-semibold text-white">41</span></div>
+                            <div className="flex items-center justify-between"><span>Rutas vigiladas</span><span className="font-semibold text-white">18</span></div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="absolute -bottom-6 left-10 rounded-[1.6rem] border border-white/10 bg-[#07101c]/82 px-5 py-4 shadow-2xl shadow-black/30 backdrop-blur-xl">
-                <div className="text-[11px] uppercase tracking-[0.24em] text-white/45">Respuesta promedio</div>
-                <div className="mt-1 text-2xl font-semibold text-white">2m 34s</div>
-                <div className="text-xs text-white/50">Atención prioritaria de eventos</div>
+                <div className="absolute -bottom-7 left-8 rounded-[1.6rem] border border-white/10 bg-[#07101c]/86 px-5 py-4 shadow-2xl shadow-black/40 backdrop-blur-xl">
+                  <div className="text-[11px] uppercase tracking-[0.24em] text-white/45">Respuesta promedio</div>
+                  <div className="mt-1 text-2xl font-semibold text-white">2m 34s</div>
+                  <div className="text-xs text-white/50">Atención prioritaria de eventos</div>
+                </div>
               </div>
             </div>
           </div>
