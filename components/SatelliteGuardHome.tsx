@@ -72,7 +72,7 @@ export default function SatelliteGuardPremiumMockup() {
             </div>
           </header>
 
-          <div className="relative grid flex-1 items-center gap-14 py-20 lg:min-h-[88vh] lg:grid-cols-[0.95fr_1.05fr] lg:py-24 xl:py-28">
+          <div className="relative flex flex-1 items-center py-20 lg:min-h-[88vh] lg:py-24 xl:py-28">
             <div className="relative z-10 max-w-3xl">
               <div className="mb-5 inline-flex items-center rounded-full border border-amber-300/20 bg-amber-300/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-amber-200">
                 Seguridad · Inteligencia · Control total
@@ -104,35 +104,18 @@ export default function SatelliteGuardPremiumMockup() {
                   </div>
                 ))}
               </div>
-            </div>
-
-            <div className="relative hidden lg:block">
-              <div className="absolute right-[-4%] top-[8%] h-[30rem] w-[30rem] rounded-full bg-cyan-400/8 blur-3xl" />
-              <div className="relative ml-auto w-full max-w-[44rem]">
-                <div className="overflow-hidden rounded-[2.6rem] border border-white/10 bg-black/20 shadow-[0_30px_120px_rgba(0,0,0,0.55)] backdrop-blur-xl">
-                  <div className="relative h-[34rem]">
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-[72%_center]" />
-                    <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(2,6,23,0.14),rgba(2,6,23,0.04),rgba(2,6,23,0.20))]" />
-                    <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-white/10 bg-[#07101c]/52 p-4 backdrop-blur-xl">
-                      <div className="text-[11px] uppercase tracking-[0.24em] text-white/45">Vehículo premium</div>
-                      <div className="mt-1 text-lg font-semibold">Unidad ejecutiva monitoreada</div>
-                      <div className="text-sm text-white/60">Visibilidad total con operación 24/7</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-5 flex items-center justify-center gap-2">
-                  <span className="h-1.5 w-6 rounded-full bg-amber-300/80" />
-                  <span className="h-1.5 w-1.5 rounded-full bg-white/35" />
-                  <span className="h-1.5 w-1.5 rounded-full bg-white/35" />
-                </div>
+              <div className="mt-8 flex items-center gap-2">
+                <span className="h-1.5 w-6 rounded-full bg-amber-300/80" />
+                <span className="h-1.5 w-1.5 rounded-full bg-white/35" />
+                <span className="h-1.5 w-1.5 rounded-full bg-white/35" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[linear-gradient(180deg,#040915_0%,#07101c_52%,#040915_100%)]">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+        <div className="rounded-[2.3rem] border border-white/10 bg-[linear-gradient(180deg,#040915_0%,#07101c_52%,#040915_100%)] p-6 lg:p-8">
           <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <div className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Centro de control</div>
