@@ -14,7 +14,7 @@ export default function SatelliteGuardPremiumMockup() {
     },
     {
       title: 'Flotillas y activos',
-      text: 'Ideal para transporte, logística, seguridad privada, maquinaria, reparto y vehículos particulares premium.',
+      text: 'Ideal para transporte, logística, seguridad privada, maquinaria, reparto y vehículos particulares.',
     },
   ];
 
@@ -26,7 +26,7 @@ export default function SatelliteGuardPremiumMockup() {
   ];
 
   const pillars = [
-    'Seguridad vehicular premium',
+    'Seguridad vehicular profesional',
     'Monitoreo empresarial',
     'Control de flotillas',
     'Recuperación y respuesta',
@@ -46,9 +46,9 @@ export default function SatelliteGuardPremiumMockup() {
   return (
     <div className="min-h-screen overflow-hidden bg-[#02050b] text-white">
       <section className="relative isolate min-h-screen border-b border-white/10 bg-[#02050b]">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-[70%_center] opacity-55" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,3,9,0.88)_0%,rgba(1,3,9,0.62)_36%,rgba(1,3,9,0.30)_58%,rgba(1,3,9,0.56)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(251,191,36,0.18),transparent_16%),radial-gradient(circle_at_82%_20%,rgba(34,211,238,0.14),transparent_18%),radial-gradient(circle_at_56%_72%,rgba(15,23,42,0.42),transparent_36%)]" />
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-[70%_center] opacity-65" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,3,9,0.76)_0%,rgba(1,3,9,0.48)_36%,rgba(1,3,9,0.20)_58%,rgba(1,3,9,0.40)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(251,191,36,0.12),transparent_16%),radial-gradient(circle_at_82%_20%,rgba(34,211,238,0.10),transparent_18%),radial-gradient(circle_at_56%_72%,rgba(15,23,42,0.26),transparent_36%)]" />
         <div className="absolute inset-0 opacity-[0.12] bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:54px_54px]" />
         <div className="absolute left-[-8%] top-[-12%] h-[34rem] w-[34rem] rounded-full bg-amber-300/10 blur-3xl" />
         <div className="absolute right-[-10%] top-[6%] h-[30rem] w-[30rem] rounded-full bg-cyan-400/10 blur-3xl" />
@@ -80,16 +80,16 @@ export default function SatelliteGuardPremiumMockup() {
               <h1 className="text-5xl font-semibold leading-[0.92] tracking-tight md:text-6xl xl:text-[5.35rem]">
                 Monitoreo GPS con una presencia
                 <span className="block bg-gradient-to-r from-white via-amber-200 to-cyan-200 bg-clip-text text-transparent">
-                  ultra premium y mucho más exclusiva.
+                  más fuerte y confiable.
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/68">
-                La V4 lleva Satellite Guard a una estética más aspiracional y más fuerte comercialmente: vigilancia ejecutiva, tecnología de precisión y una imagen de marca que sí parece de alto nivel.
+                La V4 fortalece la presencia de Satellite Guard con una imagen más profesional, operación clara y tecnología de precisión para monitoreo empresarial.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:scale-[1.02]">
-                  Ver experiencia premium
+                  Conocer la plataforma
                 </button>
                 <button className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10">
                   Solicitar cotización
@@ -120,7 +120,7 @@ export default function SatelliteGuardPremiumMockup() {
             <div>
               <div className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Centro de control</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-                Dashboard operativo premium separado del hero.
+                Dashboard operativo separado del hero.
               </h2>
             </div>
             <p className="max-w-2xl text-base leading-8 text-white/62">
@@ -221,7 +221,7 @@ export default function SatelliteGuardPremiumMockup() {
               Más cinematográfica, más exclusiva y mucho más vendible.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-white/64">
-              Aquí la marca empieza a parecer una solución premium de seguridad vehicular y monitoreo empresarial, no solo una web informativa de GPS.
+              Aquí la marca proyecta una solución profesional de seguridad vehicular y monitoreo empresarial, no solo una web informativa de GPS.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -247,7 +247,7 @@ export default function SatelliteGuardPremiumMockup() {
         </div>
 
         <div className="grid gap-4 rounded-[2rem] border border-white/10 bg-white/[0.03] p-4 sm:grid-cols-2 xl:grid-cols-4 xl:p-5">
-          {['Diseño premium más aspiracional', 'Hero con aura de marca fuerte', 'Dashboard con más presencia visual', 'Mejor percepción de valor comercial'].map((item) => (
+          {['Diseño más sólido y aspiracional', 'Hero con enfoque claro de marca', 'Dashboard con mayor presencia visual', 'Mejor percepción de valor comercial'].map((item) => (
             <div key={item} className="rounded-[1.4rem] border border-white/10 bg-[#07101c]/70 p-5 text-sm text-white/68">
               {item}
             </div>
@@ -259,7 +259,7 @@ export default function SatelliteGuardPremiumMockup() {
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
           <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <div className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Soluciones premium</div>
+              <div className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Soluciones de monitoreo</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
                 Pensado para flotillas, seguridad privada, logística y activos de alto valor.
               </h2>
@@ -275,7 +275,7 @@ export default function SatelliteGuardPremiumMockup() {
                 <div className="text-sm uppercase tracking-[0.22em] text-white/40">Solución</div>
                 <div className="mt-3 text-xl font-semibold">{item}</div>
                 <p className="mt-3 text-sm leading-7 text-white/60">
-                  Monitoreo visual, seguimiento de rutas, eventos críticos y operación con una presencia digital mucho más premium.
+                  Monitoreo visual, seguimiento de rutas, eventos críticos y operación con una presencia digital más clara y confiable.
                 </p>
               </div>
             ))}
@@ -286,19 +286,19 @@ export default function SatelliteGuardPremiumMockup() {
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
           <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-8 shadow-2xl shadow-black/10">
-            <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Lo que cambia en V3</div>
+            <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Lo que cambia en V4</div>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
               Ahora el sitio tiene una presencia mucho más memorable.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-white/64">
-              La V3 sube el nivel visual, mete una atmósfera más premium y hace que el producto parezca más sólido, más caro y más confiable.
+              La V4 refuerza la imagen del sitio y separa mejor el hero del dashboard.
             </p>
           </div>
 
           <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(250,204,21,0.10),rgba(255,255,255,0.04),rgba(34,211,238,0.08))] p-8">
             <div className="text-lg font-semibold">Qué está mejor ahora</div>
             <ul className="mt-5 space-y-4 text-sm leading-7 text-white/70">
-              <li>Hero con aura mucho más premium.</li>
+              <li>Hero con enfoque visual más claro.</li>
               <li>Composición más cinemática y aspiracional.</li>
               <li>Dashboard con sensación de producto ejecutivo.</li>
               <li>Mejor narrativa para vender seguridad y control.</li>
@@ -312,12 +312,12 @@ export default function SatelliteGuardPremiumMockup() {
         <div className="overflow-hidden rounded-[2.2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(250,204,21,0.14),rgba(255,255,255,0.03),rgba(34,211,238,0.09))] p-8 md:p-10">
           <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Call to action premium</div>
+              <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Solicita una demostración</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
                 Protege vehículos, flotillas y activos con una imagen de marca realmente más fuerte.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-8 text-white/70">
-                Esta V3 ya puede servir comme base beaucoup plus sérieuse avant de passer au front final ou à un brief Codex plus ambitieux.
+                Esta V4 ya puede servir como base más sólida para la siguiente etapa del front.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 lg:justify-end">
