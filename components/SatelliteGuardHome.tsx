@@ -85,6 +85,12 @@ export default function SatelliteGuardPremiumMockup() {
               <a href="#contacto" className="transition hover:text-white">Contacto</a>
             </nav>
             <div className="flex items-center gap-3">
+              <a
+                href="/en"
+                className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20"
+              >
+                EN
+              </a>
               <button className="hidden rounded-full border border-white/15 px-4 py-2 text-sm text-white/80 transition hover:bg-white/10 md:inline-flex">Acceso clientes</button>
               <button className="rounded-full bg-amber-400 px-5 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02]">Agenda demo</button>
             </div>
