@@ -1,4 +1,31 @@
 export default function SatelliteGuardPremiumMockup() {
+  const seoKeywords = [
+    "monitoreo gps Mexico CDMX",
+    "rastreo gps Mexico CDMX",
+    "rastreo satelital Mexico CDMX",
+    "seguimiento vehicular Mexico CDMX",
+    "localizador gps para autos Mexico CDMX",
+    "gps para flotillas Mexico CDMX",
+    "control de flotillas Mexico CDMX",
+    "monitoreo de flotillas Mexico CDMX",
+    "geocercas gps Mexico CDMX",
+    "alertas gps en tiempo real Mexico CDMX",
+    "plataforma de monitoreo gps Mexico CDMX",
+    "seguridad vehicular Mexico CDMX",
+    "recuperación vehicular Mexico CDMX",
+    "rastreo de activos Mexico CDMX",
+    "monitoreo de activos móviles Mexico CDMX",
+    "gps para transporte y logística Mexico CDMX",
+    "sistema gps para empresas Mexico CDMX",
+    "monitoreo 24/7 vehículos Mexico CDMX",
+    "rastreo gps méxico Mexico CDMX",
+    "monitoreo gps méxico Mexico CDMX",
+    "control de flotillas méxico Mexico CDMX",
+    "rastreo gps cdmx Mexico CDMX",
+    "rastreo gps monterrey Mexico CDMX",
+    "rastreo gps guadalajara Mexico CDMX",
+    "tecnología satelital para vehículos Mexico CDMX",
+  ];
   const features = [
     {
       title: 'Monitoreo en tiempo real',
@@ -283,6 +310,22 @@ export default function SatelliteGuardPremiumMockup() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-10">
+        <h2 className="text-3xl font-semibold">Servicios GPS en México</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <a href="/servicios/rastreo-gps" className="rounded-xl border border-white/15 p-4 hover:bg-white/5">Rastreo GPS en tiempo real</a>
+          <a href="/servicios/control-de-flotillas" className="rounded-xl border border-white/15 p-4 hover:bg-white/5">Control de flotillas</a>
+          <a href="/servicios/geocercas" className="rounded-xl border border-white/15 p-4 hover:bg-white/5">Geocercas y alertas</a>
+        </div>
+      </section>
+      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-10">
+        <h2 className="text-3xl font-semibold">Preguntas frecuentes</h2>
+        <div className="mt-6 space-y-4 text-white/80">
+          <div><h3 className="font-semibold text-white">¿Qué incluye el monitoreo GPS?</h3><p>Ubicación en vivo, historial de rutas, alertas críticas y panel de control para operación diaria.</p></div>
+          <div><h3 className="font-semibold text-white">¿Sirve para flotillas y activos?</h3><p>Sí, la plataforma está diseñada para flotillas, vehículos particulares y activos móviles.</p></div>
+          <div><h3 className="font-semibold text-white">¿Puedo configurar geocercas?</h3><p>Sí, puedes definir zonas y recibir alertas automáticas de entrada, salida o desvíos.</p></div>
+        </div>
+      </section>
       <section id="contacto" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="mb-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
@@ -486,6 +529,11 @@ export default function SatelliteGuardPremiumMockup() {
           </div>
         </div>
       </section>
+      <footer className="border-t border-white/10 bg-black/45">
+        <div className="mx-auto max-w-7xl px-6 py-8 text-center text-xs leading-7 text-white/45 lg:px-10">
+          {seoKeywords.join(" · ")}
+        </div>
+      </footer>
     </div>
   );
 }

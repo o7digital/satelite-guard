@@ -1,4 +1,24 @@
 export default function SatelliteGuardPremiumMockup() {
+  const seoKeywords = [
+    "gps monitoring Mexico CDMX",
+    "gps tracking Mexico CDMX",
+    "satellite tracking Mexico CDMX",
+    "vehicle tracking Mexico CDMX",
+    "gps car tracker Mexico CDMX",
+    "fleet gps Mexico CDMX",
+    "fleet management gps Mexico CDMX",
+    "fleet monitoring Mexico CDMX",
+    "gps geofencing Mexico CDMX",
+    "real-time gps alerts Mexico CDMX",
+    "gps monitoring platform Mexico CDMX",
+    "vehicle security Mexico CDMX",
+    "vehicle recovery Mexico CDMX",
+    "asset tracking Mexico CDMX",
+    "mobile asset monitoring Mexico CDMX",
+    "gps for transport and logistics Mexico CDMX",
+    "gps system for companies Mexico CDMX",
+    "24/7 vehicle monitoring Mexico CDMX",
+  ];
   const features = [
     {
       title: 'Real-time monitoring',
@@ -346,6 +366,11 @@ export default function SatelliteGuardPremiumMockup() {
           </div>
         </div>
       </section>
+      <footer className="border-t border-white/10 bg-black/45">
+        <div className="mx-auto max-w-7xl px-6 py-8 text-center text-xs leading-7 text-white/45 lg:px-10">
+          {seoKeywords.join(" · ")}
+        </div>
+      </footer>
     </div>
   );
 }
