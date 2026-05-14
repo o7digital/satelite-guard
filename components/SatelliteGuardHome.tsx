@@ -419,7 +419,7 @@ export default function SatelliteGuardPremiumMockup() {
 
       <section id="cobertura" className="mx-auto max-w-7xl px-6 pb-20 lg:px-10">
         <div className="overflow-hidden rounded-[2.2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(250,204,21,0.14),rgba(255,255,255,0.03),rgba(34,211,238,0.09))] p-8 md:p-10">
-          <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Solicita una demostración</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
@@ -429,11 +429,45 @@ export default function SatelliteGuardPremiumMockup() {
                 Esta V4 ya puede servir como base más sólida para la siguiente etapa del front.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4 lg:justify-end">
-              <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black">
-                Solicitar demo
-              </button>
-            </div>
+            <form
+              action="https://formspree.io/f/xnjwkdqg"
+              method="POST"
+              className="rounded-2xl border border-white/10 bg-black/20 p-5"
+            >
+              <div className="grid gap-3">
+                <input
+                  name="nombre"
+                  required
+                  placeholder="Nombre"
+                  className="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/60"
+                />
+                <input
+                  name="telefono"
+                  placeholder="Teléfono"
+                  className="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/60"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Correo electrónico"
+                  className="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/60"
+                />
+                <textarea
+                  name="mensaje"
+                  required
+                  placeholder="Mensaje"
+                  rows={4}
+                  className="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/60"
+                />
+                <button
+                  type="submit"
+                  className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black"
+                >
+                  Solicitar demo
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </section>
