@@ -66,6 +66,19 @@ export default function SatelliteGuardPremiumMockup() {
               <a href="#" className="transition hover:text-white">Coverage</a>
               <a href="#" className="transition hover:text-white">Contact</a>
             </nav>
+            <details className="relative md:hidden">
+              <summary className="list-none rounded-full border border-white/20 bg-white/10 px-3 py-2 text-white/90">
+                <span className="sr-only">Open menu</span>
+                <span aria-hidden="true">☰</span>
+              </summary>
+              <nav className="absolute right-0 top-12 z-30 w-52 rounded-2xl border border-white/15 bg-[#07101c]/95 p-3 text-sm text-white/85 shadow-2xl backdrop-blur-xl">
+                <a href="#" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Home</a>
+                <a href="#" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Technology</a>
+                <a href="#" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Fleets</a>
+                <a href="#" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Coverage</a>
+                <a href="#" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Contact</a>
+              </nav>
+            </details>
             <div className="flex items-center gap-3">
               <a
                 href="/"
