@@ -13,8 +13,38 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Satellite Guard",
-  description: "Seguridad, rastreo y control para vehiculos, flotillas y activos.",
+  metadataBase: new URL("https://www.satelliteguard.com.mx"),
+  title: {
+    default: "Satellite Guard | Monitoreo GPS y Seguridad Vehicular",
+    template: "%s | Satellite Guard",
+  },
+  description: "Seguridad, rastreo y control para vehículos, flotillas y activos.",
+  alternates: {
+    canonical: "/",
+    languages: {
+      es: "/",
+      en: "/en",
+    },
+  },
+  openGraph: {
+    title: "Satellite Guard | Monitoreo GPS y Seguridad Vehicular",
+    description: "Seguridad, rastreo y control para vehículos, flotillas y activos.",
+    url: "https://www.satelliteguard.com.mx/",
+    siteName: "Satellite Guard",
+    locale: "es_MX",
+    type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Satellite Guard" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Satellite Guard | Monitoreo GPS y Seguridad Vehicular",
+    description: "Seguridad, rastreo y control para vehículos, flotillas y activos.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
