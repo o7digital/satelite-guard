@@ -43,6 +43,24 @@ export default function SatelliteGuardPremiumMockup() {
     'Flotillas corporativas',
   ];
 
+  const products = [
+    {
+      name: "GPS GF-07",
+      description:
+        "Rastreador compacto para ubicación en tiempo real y seguimiento básico de activos móviles.",
+    },
+    {
+      name: "PRO43G",
+      description:
+        "Rastreador GPS para vehículos pesados con lectura CANbus, detección jammer y monitoreo avanzado.",
+    },
+    {
+      name: "Global Star",
+      description:
+        "Solución satelital para activos fijos y móviles con cobertura amplia y operación en zonas remotas.",
+    },
+  ];
+
   return (
     <div className="min-h-screen overflow-hidden bg-[#02050b] text-white">
       <section id="inicio" className="relative isolate min-h-screen border-b border-white/10 bg-[#02050b]">
@@ -280,6 +298,54 @@ export default function SatelliteGuardPremiumMockup() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-8">
+            <div className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">¿Quiénes Somos?</div>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
+              Localización sin límites y sin fronteras.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/68">
+              Somos un grupo de investigadores profesionales dedicados a resolver problemas de
+              inseguridad y robo de autos y camiones mediante tecnología de vanguardia en rastreo
+              y localización.
+            </p>
+            <p className="mt-4 text-base leading-8 text-white/62">
+              Nuestros centros de monitoreo estratégicamente ubicados permiten una comunicación
+              ágil, precisa y eficiente para brindar mejor servicio al usuario final.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(250,204,21,0.10),rgba(255,255,255,0.04),rgba(34,211,238,0.08))] p-8">
+            <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Cobertura</div>
+            <p className="text-base leading-8 text-white/70">
+              Tenemos amplia cobertura en Canadá, U.S.A., México, Centroamérica, el Caribe y
+              Sudamérica, con capacidad de operación internacional para activos y flotillas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+        <div className="mb-10">
+          <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Productos</div>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
+            Equipos de vanguardia y alta calidad para rastreo satelital.
+          </h2>
+        </div>
+        <div className="grid gap-5 md:grid-cols-3">
+          {products.map((product) => (
+            <article
+              key={product.name}
+              className="rounded-[1.6rem] border border-white/10 bg-white/[0.04] p-6"
+            >
+              <h3 className="text-2xl font-semibold">{product.name}</h3>
+              <p className="mt-3 text-sm leading-7 text-white/65">{product.description}</p>
+            </article>
+          ))}
         </div>
       </section>
 
