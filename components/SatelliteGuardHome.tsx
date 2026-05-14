@@ -45,19 +45,48 @@ export default function SatelliteGuardPremiumMockup() {
 
   const products = [
     {
-      name: "GPS GF-07",
-      description:
-        "Rastreador compacto para ubicación en tiempo real y seguimiento básico de activos móviles.",
-    },
-    {
       name: "PRO43G",
       description:
-        "Rastreador GPS para vehículos pesados con lectura CANbus, detección jammer y monitoreo avanzado.",
+        "Rastreador GPS para vehículos pesados con lectura CANbus (FMS, J1708 y J1939), protección contra interferencias (Jammer) y monitoreo avanzado.",
+      features: [
+        "Datos de GPS y acelerómetro en tiempo real",
+        "Lectura CANbus y seguimiento de combustible",
+        "Geo-cercas internas y alertas vía SMS",
+        "Admite sensores adicionales",
+      ],
     },
     {
       name: "Global Star",
       description:
-        "Solución satelital para activos fijos y móviles con cobertura amplia y operación en zonas remotas.",
+        "Tecnología satelital para activos fijos y móviles. Funciona con la red Simplex de Globalstar y permite gestión inteligente de activos en zonas remotas.",
+      features: [
+        "Instalación rápida",
+        "Compatible con plataforma EPCOMGPS",
+        "Funciona con red eléctrica externa o baterías AAA",
+        "Cobertura satelital amplia",
+      ],
+    },
+    {
+      name: "CTS-100",
+      description:
+        "Localizador para vehículo, bolso o activos de valor con consulta por SMS y seguimiento de ubicación en tiempo real.",
+      features: [
+        "Ubicación por mapa y seguimiento desde móvil",
+        "No requiere cuota de plataforma",
+        "Imanes integrados para instalación rápida",
+        "Alarma SOS y precisión GPS aproximada de 10m",
+      ],
+    },
+    {
+      name: "Teléfono Satelital Iridium",
+      description:
+        "Equipo satelital robusto para operación en campo, resistente al agua, golpes y polvo (IP65), con alta portabilidad.",
+      features: [
+        "Estándar de durabilidad de grado militar",
+        "Pantalla legible a la luz del día",
+        "Antena de alta ganancia",
+        "Batería de larga duración en espera y conversación",
+      ],
     },
   ];
 
@@ -317,21 +346,22 @@ export default function SatelliteGuardPremiumMockup() {
               Localización sin límites y sin fronteras.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/68">
-              Somos un grupo de investigadores profesionales dedicados a resolver problemas de
-              inseguridad y robo de autos y camiones mediante tecnología de vanguardia en rastreo
-              y localización.
+              Somos un grupo de investigadores profesionales calificados dedicados a encontrar
+              soluciones a los problemas de inseguridad y robo de autos y camiones.
             </p>
             <p className="mt-4 text-base leading-8 text-white/62">
-              Nuestros centros de monitoreo estratégicamente ubicados permiten una comunicación
-              ágil, precisa y eficiente para brindar mejor servicio al usuario final.
+              Aplicamos tecnología de vanguardia para proporcionar los servicios de rastreo y
+              localización. Contamos con los dispositivos y equipos necesarios para que nuestros
+              clientes tengan una herramienta de apoyo y control de su parque vehicular.
             </p>
           </div>
 
           <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(250,204,21,0.10),rgba(255,255,255,0.04),rgba(34,211,238,0.08))] p-8">
             <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Cobertura</div>
             <p className="text-base leading-8 text-white/70">
-              Tenemos amplia cobertura en Canadá, U.S.A., México, Centroamérica, el Caribe y
-              Sudamérica, con capacidad de operación internacional para activos y flotillas.
+              Nuestros centros de monitoreo situados estratégicamente en diferentes ciudades del
+              mundo permiten una comunicación ágil, precisa y eficiente. Cobertura: Canadá, U.S.A.,
+              México, Centroamérica, El Caribe, Colombia, Venezuela y Europa.
             </p>
           </div>
         </div>
@@ -344,7 +374,7 @@ export default function SatelliteGuardPremiumMockup() {
             Equipos de vanguardia y alta calidad para rastreo satelital.
           </h2>
         </div>
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2">
           {products.map((product) => (
             <article
               key={product.name}
@@ -352,6 +382,11 @@ export default function SatelliteGuardPremiumMockup() {
             >
               <h3 className="text-2xl font-semibold">{product.name}</h3>
               <p className="mt-3 text-sm leading-7 text-white/65">{product.description}</p>
+              <ul className="mt-4 space-y-2 text-sm text-white/70">
+                {product.features.map((feature) => (
+                  <li key={feature}>• {feature}</li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
