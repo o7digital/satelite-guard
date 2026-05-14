@@ -1,51 +1,51 @@
 export default function SatelliteGuardPremiumMockup() {
   const features = [
     {
-      title: 'Monitoreo en tiempo real',
-      text: 'Ubicación precisa, rutas, geocercas, historial y eventos críticos en una interfaz clara y ejecutiva.',
+      title: 'Real-time monitoring',
+      text: 'Accurate location, routes, geofences, history, and critical events in a clear executive interface.',
     },
     {
-      title: 'Centro de control 24/7',
-      text: 'Diseñado para transmitir vigilancia activa, respuesta inmediata y operación continua para clientes exigentes.',
+      title: '24/7 control center',
+      text: 'Designed to convey active surveillance, immediate response, and continuous operations for demanding clients.',
     },
     {
-      title: 'Alertas inteligentes',
-      text: 'Exceso de velocidad, movimiento no autorizado, ignición, desvíos de ruta y zonas restringidas.',
+      title: 'Smart alerts',
+      text: 'Speeding, unauthorized movement, ignition, route deviations, and restricted zones.',
     },
     {
-      title: 'Flotillas y activos',
-      text: 'Ideal para transporte, logística, seguridad privada, maquinaria, reparto y vehículos particulares.',
+      title: 'Fleets and assets',
+      text: 'Ideal for transportation, logistics, private security, machinery, delivery operations, and personal vehicles.',
     },
   ];
 
   const stats = [
-    { value: '24/7', label: 'Monitoreo activo' },
-    { value: '8,500+', label: 'Unidades vigiladas' },
-    { value: '120k+', label: 'Eventos procesados' },
-    { value: '15+', label: 'Años de experiencia' },
+    { value: '24/7', label: 'Active monitoring' },
+    { value: '8,500+', label: 'Tracked units' },
+    { value: '120k+', label: 'Processed events' },
+    { value: '15+', label: 'Years of experience' },
   ];
 
   const pillars = [
-    'Seguridad vehicular profesional',
-    'Monitoreo empresarial',
-    'Control de flotillas',
-    'Recuperación y respuesta',
-    'Geolocalización avanzada',
-    'Visibilidad operativa total',
+    'Professional vehicle security',
+    'Enterprise monitoring',
+    'Fleet control',
+    'Recovery and response',
+    'Advanced geolocation',
+    'Complete operational visibility',
   ];
 
   const solutions = [
-    'Transporte y logística',
-    'Vehículos particulares',
-    'Renta de autos',
-    'Escoltas y seguridad',
-    'Maquinaria y activos',
-    'Flotillas corporativas',
+    'Transportation and logistics',
+    'Personal vehicles',
+    'Car rental',
+    'Escorts and security',
+    'Machinery and assets',
+    'Corporate fleets',
   ];
 
   return (
     <div className="min-h-screen overflow-hidden bg-[#02050b] text-white">
-      <section id="inicio" className="relative isolate min-h-screen border-b border-white/10 bg-[#02050b]">
+      <section className="relative isolate min-h-screen border-b border-white/10 bg-[#02050b]">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-[70%_center] opacity-65" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,3,9,0.76)_0%,rgba(1,3,9,0.48)_36%,rgba(1,3,9,0.20)_58%,rgba(1,3,9,0.40)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(251,191,36,0.12),transparent_16%),radial-gradient(circle_at_82%_20%,rgba(34,211,238,0.10),transparent_18%),radial-gradient(circle_at_56%_72%,rgba(15,23,42,0.26),transparent_36%)]" />
@@ -60,39 +60,39 @@ export default function SatelliteGuardPremiumMockup() {
               <div className="text-sm text-white/50">Elite GPS Monitoring</div>
             </div>
             <nav className="hidden gap-8 text-sm text-white/70 md:flex">
-              <a href="#inicio" className="transition hover:text-white">Inicio</a>
-              <a href="#tecnologia" className="transition hover:text-white">Tecnología</a>
-              <a href="#flotillas" className="transition hover:text-white">Flotillas</a>
-              <a href="#cobertura" className="transition hover:text-white">Cobertura</a>
-              <a href="#contacto" className="transition hover:text-white">Contacto</a>
+              <a href="#" className="transition hover:text-white">Home</a>
+              <a href="#" className="transition hover:text-white">Technology</a>
+              <a href="#" className="transition hover:text-white">Fleets</a>
+              <a href="#" className="transition hover:text-white">Coverage</a>
+              <a href="#" className="transition hover:text-white">Contact</a>
             </nav>
             <div className="flex items-center gap-3">
-              <button className="hidden rounded-full border border-white/15 px-4 py-2 text-sm text-white/80 transition hover:bg-white/10 md:inline-flex">Acceso clientes</button>
-              <button className="rounded-full bg-amber-400 px-5 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02]">Agenda demo</button>
+              <button className="hidden rounded-full border border-white/15 px-4 py-2 text-sm text-white/80 transition hover:bg-white/10 md:inline-flex">Client access</button>
+              <button className="rounded-full bg-amber-400 px-5 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02]">Schedule demo</button>
             </div>
           </header>
 
           <div className="relative flex flex-1 items-center py-20 lg:min-h-[88vh] lg:py-24 xl:py-28">
             <div className="relative z-10 max-w-3xl">
               <div className="mb-5 inline-flex items-center rounded-full border border-amber-300/20 bg-amber-300/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-amber-200">
-                Seguridad · Inteligencia · Control total
+                Security · Intelligence · Total control
               </div>
               <h1 className="text-5xl font-semibold leading-[0.92] tracking-tight md:text-6xl xl:text-[5.35rem]">
-                Monitoreo GPS con una presencia
+                GPS monitoring with a presence
                 <span className="block bg-gradient-to-r from-white via-amber-200 to-cyan-200 bg-clip-text text-transparent">
-                  más fuerte y confiable.
+                  stronger and more reliable.
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/68">
-                La V4 fortalece la presencia de Satellite Guard con una imagen más profesional, operación clara y tecnología de precisión para monitoreo empresarial.
+                V4 strengthens Satellite Guard's presence with a more professional image, clear operations, and precision technology for enterprise monitoring.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:scale-[1.02]">
-                  Conocer la plataforma
+                  Explore the platform
                 </button>
                 <button className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10">
-                  Solicitar cotización
+                  Request a quote
                 </button>
               </div>
 
@@ -114,17 +114,17 @@ export default function SatelliteGuardPremiumMockup() {
         </div>
       </section>
 
-      <section id="tecnologia" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="rounded-[2.3rem] border border-white/10 bg-[linear-gradient(180deg,#040915_0%,#07101c_52%,#040915_100%)] p-6 lg:p-8">
           <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <div className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Centro de control</div>
+              <div className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Control center</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-                Dashboard operativo separado del hero.
+                Operational dashboard separated from the hero section.
               </h2>
             </div>
             <p className="max-w-2xl text-base leading-8 text-white/62">
-              Monitoreo visual, alertas críticas y estado ejecutivo en un espacio dedicado para lectura clara y toma de decisiones.
+              Visual monitoring, critical alerts, and executive status in a dedicated area for clear reading and faster decision-making.
             </p>
           </div>
 
@@ -141,7 +141,7 @@ export default function SatelliteGuardPremiumMockup() {
                     <div className="mt-1 text-lg font-semibold">Fleet Command</div>
                   </div>
                   <div className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs text-emerald-300">
-                    Operativo en línea
+                    Online operational
                   </div>
                 </div>
 
@@ -149,8 +149,8 @@ export default function SatelliteGuardPremiumMockup() {
                   <div className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(7,16,28,0.76),rgba(8,18,33,0.88))] p-5">
                     <div className="mb-4 flex items-center justify-between">
                       <div>
-                        <div className="text-sm text-white/45">Vista geoespacial</div>
-                        <div className="text-xl font-semibold">Cobertura táctica de unidades</div>
+                        <div className="text-sm text-white/45">Geospatial view</div>
+                        <div className="text-xl font-semibold">Coverage táctica de unidades</div>
                       </div>
                       <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-cyan-200">GPS · IoT · Satellite</div>
                     </div>
@@ -167,36 +167,36 @@ export default function SatelliteGuardPremiumMockup() {
                       </svg>
 
                       <div className="absolute bottom-4 left-4 rounded-2xl border border-white/10 bg-[#07101c]/85 px-4 py-3 backdrop-blur-xl">
-                        <div className="text-[11px] uppercase tracking-[0.22em] text-white/40">Unidad prioritaria</div>
+                        <div className="text-[11px] uppercase tracking-[0.22em] text-white/40">Priority unit</div>
                         <div className="mt-1 text-sm font-semibold">SUV Executive 07</div>
-                        <div className="text-xs text-white/50">Ruta monitoreada en tiempo real</div>
+                        <div className="text-xs text-white/50">Route monitored in real time</div>
                       </div>
                     </div>
                   </div>
 
                   <div className="grid gap-4">
                     <div className="rounded-[1.6rem] border border-white/10 bg-[#07101c]/78 p-5 backdrop-blur-xl">
-                      <div className="text-sm text-white/45">Alertas críticas</div>
+                      <div className="text-sm text-white/45">Critical alerts</div>
                       <div className="mt-2 text-3xl font-semibold">03</div>
                       <p className="mt-2 text-sm leading-6 text-white/58">
-                        Eventos de alta prioridad con seguimiento inmediato y protocolo activo.
+                        High-priority events with immediate follow-up and active protocol.
                       </p>
                     </div>
 
                     <div className="rounded-[1.6rem] border border-white/10 bg-[#07101c]/78 p-5 backdrop-blur-xl">
-                      <div className="text-sm text-white/45">Última incidencia</div>
-                      <div className="mt-2 text-lg font-semibold">Movimiento no autorizado</div>
+                      <div className="text-sm text-white/45">Latest incident</div>
+                      <div className="mt-2 text-lg font-semibold">Unauthorized movement</div>
                       <p className="mt-2 text-sm leading-6 text-white/58">
-                        Desvío fuera de geocerca. Traza registrada y operador notificado.
+                        Geofence deviation. Trace recorded and operator notified.
                       </p>
                     </div>
 
                     <div className="rounded-[1.6rem] border border-white/10 bg-[#07101c]/78 p-5 backdrop-blur-xl">
-                      <div className="text-sm text-white/45">Estatus ejecutivo</div>
+                      <div className="text-sm text-white/45">Executive status</div>
                       <div className="mt-4 space-y-3 text-sm text-white/60">
-                        <div className="flex items-center justify-between"><span>Unidades activas</span><span className="font-semibold text-white">126</span></div>
-                        <div className="flex items-center justify-between"><span>Geocercas activas</span><span className="font-semibold text-white">41</span></div>
-                        <div className="flex items-center justify-between"><span>Rutas vigiladas</span><span className="font-semibold text-white">18</span></div>
+                        <div className="flex items-center justify-between"><span>Active units</span><span className="font-semibold text-white">126</span></div>
+                        <div className="flex items-center justify-between"><span>Active geofences</span><span className="font-semibold text-white">41</span></div>
+                        <div className="flex items-center justify-between"><span>Monitored routes</span><span className="font-semibold text-white">18</span></div>
                       </div>
                     </div>
                   </div>
@@ -205,23 +205,23 @@ export default function SatelliteGuardPremiumMockup() {
             </div>
 
             <div className="absolute -bottom-7 left-8 rounded-[1.6rem] border border-white/10 bg-[#07101c]/86 px-5 py-4 shadow-2xl shadow-black/40 backdrop-blur-xl">
-              <div className="text-[11px] uppercase tracking-[0.24em] text-white/45">Respuesta promedio</div>
+              <div className="text-[11px] uppercase tracking-[0.24em] text-white/45">Average response</div>
               <div className="mt-1 text-2xl font-semibold text-white">2m 34s</div>
-              <div className="text-xs text-white/50">Atención prioritaria de eventos</div>
+              <div className="text-xs text-white/50">Priority event handling</div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contacto" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="mb-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Nueva dirección visual</div>
+            <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">New visual direction</div>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-              Más cinematográfica, más exclusiva y mucho más vendible.
+              More cinematic, more exclusive, and far more marketable.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-white/64">
-              Aquí la marca proyecta una solución profesional de seguridad vehicular y monitoreo empresarial, no solo una web informativa de GPS.
+              The brand now projects a professional vehicle-security and enterprise-monitoring solution, not just an informational GPS website.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -247,7 +247,7 @@ export default function SatelliteGuardPremiumMockup() {
         </div>
 
         <div className="grid gap-4 rounded-[2rem] border border-white/10 bg-white/[0.03] p-4 sm:grid-cols-2 xl:grid-cols-4 xl:p-5">
-          {['Diseño más sólido y aspiracional', 'Hero con enfoque claro de marca', 'Dashboard con mayor presencia visual', 'Mejor percepción de valor comercial'].map((item) => (
+          {['Stronger, more aspirational design', 'Hero section with clear brand focus', 'Dashboard with stronger visual presence', 'Better perceived commercial value'].map((item) => (
             <div key={item} className="rounded-[1.4rem] border border-white/10 bg-[#07101c]/70 p-5 text-sm text-white/68">
               {item}
             </div>
@@ -255,27 +255,27 @@ export default function SatelliteGuardPremiumMockup() {
         </div>
       </section>
 
-      <section id="flotillas" className="border-y border-white/10 bg-white/[0.025]">
+      <section className="border-y border-white/10 bg-white/[0.025]">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
           <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <div className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Soluciones de monitoreo</div>
+              <div className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Monitoring solutions</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-                Pensado para flotillas, seguridad privada, logística y activos de alto valor.
+                Built for fleets, private security, logistics, and high-value assets.
               </h2>
             </div>
             <p className="max-w-2xl text-base leading-8 text-white/62">
-              Este bloque deja más claro el business case y hace que la oferta se entienda como un servicio serio de protección y visibilidad operativa.
+              This section clarifies the business case and positions the offer as a serious protection and operational-visibility service.
             </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {solutions.map((item) => (
               <div key={item} className="rounded-[1.6rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] p-6">
-                <div className="text-sm uppercase tracking-[0.22em] text-white/40">Solución</div>
+                <div className="text-sm uppercase tracking-[0.22em] text-white/40">Solution</div>
                 <div className="mt-3 text-xl font-semibold">{item}</div>
                 <p className="mt-3 text-sm leading-7 text-white/60">
-                  Monitoreo visual, seguimiento de rutas, eventos críticos y operación con una presencia digital más clara y confiable.
+                  Visual monitoring, route tracking, critical events, and operations with a clearer and more reliable digital presence.
                 </p>
               </div>
             ))}
@@ -286,43 +286,43 @@ export default function SatelliteGuardPremiumMockup() {
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
           <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-8 shadow-2xl shadow-black/10">
-            <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Lo que cambia en V4</div>
+            <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">What changes in V4</div>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-              Ahora el sitio tiene una presencia mucho más memorable.
+              The site now has a much more memorable presence.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-white/64">
-              La V4 refuerza la imagen del sitio y separa mejor el hero del dashboard.
+              V4 reinforces the site's image and better separates the hero from the dashboard.
             </p>
           </div>
 
           <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(250,204,21,0.10),rgba(255,255,255,0.04),rgba(34,211,238,0.08))] p-8">
-            <div className="text-lg font-semibold">Qué está mejor ahora</div>
+            <div className="text-lg font-semibold">What's better now</div>
             <ul className="mt-5 space-y-4 text-sm leading-7 text-white/70">
-              <li>Hero con enfoque visual más claro.</li>
-              <li>Composición más cinemática y aspiracional.</li>
-              <li>Dashboard con sensación de producto ejecutivo.</li>
-              <li>Mejor narrativa para vender seguridad y control.</li>
-              <li>Percepción de marca claramente superior.</li>
+              <li>Hero with clearer visual focus.</li>
+              <li>More cinematic and aspirational composition.</li>
+              <li>Dashboard with an executive product feel.</li>
+              <li>Stronger narrative to sell security and control.</li>
+              <li>Clearly stronger brand perception.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section id="cobertura" className="mx-auto max-w-7xl px-6 pb-20 lg:px-10">
+      <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-10">
         <div className="overflow-hidden rounded-[2.2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(250,204,21,0.14),rgba(255,255,255,0.03),rgba(34,211,238,0.09))] p-8 md:p-10">
           <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Solicita una demostración</div>
+              <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Request a demo</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-                Protege vehículos, flotillas y activos con una imagen de marca realmente más fuerte.
+                Protect vehicles, fleets, and assets with a truly stronger brand image.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-8 text-white/70">
-                Esta V4 ya puede servir como base más sólida para la siguiente etapa del front.
+                This V4 can now serve as a stronger foundation for the next frontend phase.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 lg:justify-end">
-              <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black">Aprobar diseño</button>
-              <button className="rounded-full border border-white/15 bg-black/20 px-6 py-3 text-sm font-medium text-white">Pedir backend demo</button>
+              <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black">Approve design</button>
+              <button className="rounded-full border border-white/15 bg-black/20 px-6 py-3 text-sm font-medium text-white">Request backend demo</button>
             </div>
           </div>
         </div>
