@@ -395,8 +395,9 @@ export default function SatelliteGuardPremiumMockup() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4 lg:justify-end">
-              <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black">Aprobar diseño</button>
-              <button className="rounded-full border border-white/15 bg-black/20 px-6 py-3 text-sm font-medium text-white">Pedir backend demo</button>
+              <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black">
+                Solicitar demo
+              </button>
             </div>
           </div>
         </div>
