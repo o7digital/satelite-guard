@@ -81,6 +81,8 @@ export default function SatelliteGuardPremiumMockup() {
               <a href="#inicio" className="transition hover:text-white">Inicio</a>
               <a href="#tecnologia" className="transition hover:text-white">Tecnología</a>
               <a href="#flotillas" className="transition hover:text-white">Flotillas</a>
+              <a href="#quienes-somos" className="transition hover:text-white">Quiénes Somos</a>
+              <a href="#productos" className="transition hover:text-white">Productos</a>
               <a href="#cobertura" className="transition hover:text-white">Cobertura</a>
               <a href="#contacto" className="transition hover:text-white">Contacto</a>
             </nav>
@@ -307,7 +309,7 @@ export default function SatelliteGuardPremiumMockup() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+      <section id="quienes-somos" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
           <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.03))] p-8">
             <div className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">¿Quiénes Somos?</div>
@@ -335,7 +337,7 @@ export default function SatelliteGuardPremiumMockup() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+      <section id="productos" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="mb-10">
           <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Productos</div>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
