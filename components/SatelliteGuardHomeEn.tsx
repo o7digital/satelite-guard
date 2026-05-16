@@ -1,4 +1,24 @@
 export default function SatelliteGuardPremiumMockup() {
+  const seoKeywords = [
+    "gps monitoring Mexico CDMX",
+    "gps tracking Mexico CDMX",
+    "satellite tracking Mexico CDMX",
+    "vehicle tracking Mexico CDMX",
+    "gps car tracker Mexico CDMX",
+    "fleet gps Mexico CDMX",
+    "fleet management gps Mexico CDMX",
+    "fleet monitoring Mexico CDMX",
+    "gps geofencing Mexico CDMX",
+    "real-time gps alerts Mexico CDMX",
+    "gps monitoring platform Mexico CDMX",
+    "vehicle security Mexico CDMX",
+    "vehicle recovery Mexico CDMX",
+    "asset tracking Mexico CDMX",
+    "mobile asset monitoring Mexico CDMX",
+    "gps for transport and logistics Mexico CDMX",
+    "gps system for companies Mexico CDMX",
+    "24/7 vehicle monitoring Mexico CDMX",
+  ];
   const features = [
     {
       title: 'Real-time monitoring',
@@ -46,7 +66,7 @@ export default function SatelliteGuardPremiumMockup() {
   return (
     <div className="min-h-screen overflow-hidden bg-[#02050b] text-white">
       <section className="relative isolate min-h-screen border-b border-white/10 bg-[#02050b]">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-[70%_center] opacity-65" />
+        <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-[70%_center] opacity-65" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,3,9,0.76)_0%,rgba(1,3,9,0.48)_36%,rgba(1,3,9,0.20)_58%,rgba(1,3,9,0.40)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(251,191,36,0.12),transparent_16%),radial-gradient(circle_at_82%_20%,rgba(34,211,238,0.10),transparent_18%),radial-gradient(circle_at_56%_72%,rgba(15,23,42,0.26),transparent_36%)]" />
         <div className="absolute inset-0 opacity-[0.12] bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:54px_54px]" />
@@ -151,7 +171,7 @@ export default function SatelliteGuardPremiumMockup() {
             <div className="rounded-[2.5rem] border border-white/10 bg-[#07101c]/58 p-4 shadow-[0_30px_120px_rgba(0,0,0,0.55)] backdrop-blur-2xl">
               <div className="relative h-[38rem] overflow-hidden rounded-[2rem]">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_25%,rgba(34,211,238,0.20),transparent_14%),radial-gradient(circle_at_75%_22%,rgba(251,191,36,0.18),transparent_16%),linear-gradient(180deg,rgba(3,7,18,0.2),rgba(3,7,18,0.68))]" />
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80')] bg-cover bg-center opacity-20" />
+                <div className="absolute inset-0 bg-[url('/dashboard-bg.webp')] bg-cover bg-center opacity-20" />
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(2,6,23,0.84),rgba(2,6,23,0.36),rgba(2,6,23,0.76))]" />
 
                 <div className="absolute left-5 right-5 top-5 flex items-start justify-between gap-4">
@@ -346,6 +366,11 @@ export default function SatelliteGuardPremiumMockup() {
           </div>
         </div>
       </section>
+      <footer className="border-t border-white/10 bg-black/45">
+        <div className="mx-auto max-w-7xl px-6 py-8 text-center text-xs leading-7 text-white/45 lg:px-10">
+          {seoKeywords.join(" · ")}
+        </div>
+      </footer>
     </div>
   );
 }

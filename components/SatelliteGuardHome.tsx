@@ -1,4 +1,31 @@
 export default function SatelliteGuardPremiumMockup() {
+  const seoKeywords = [
+    "monitoreo gps Mexico CDMX",
+    "rastreo gps Mexico CDMX",
+    "rastreo satelital Mexico CDMX",
+    "seguimiento vehicular Mexico CDMX",
+    "localizador gps para autos Mexico CDMX",
+    "gps para flotillas Mexico CDMX",
+    "control de flotillas Mexico CDMX",
+    "monitoreo de flotillas Mexico CDMX",
+    "geocercas gps Mexico CDMX",
+    "alertas gps en tiempo real Mexico CDMX",
+    "plataforma de monitoreo gps Mexico CDMX",
+    "seguridad vehicular Mexico CDMX",
+    "recuperación vehicular Mexico CDMX",
+    "rastreo de activos Mexico CDMX",
+    "monitoreo de activos móviles Mexico CDMX",
+    "gps para transporte y logística Mexico CDMX",
+    "sistema gps para empresas Mexico CDMX",
+    "monitoreo 24/7 vehículos Mexico CDMX",
+    "rastreo gps méxico Mexico CDMX",
+    "monitoreo gps méxico Mexico CDMX",
+    "control de flotillas méxico Mexico CDMX",
+    "rastreo gps cdmx Mexico CDMX",
+    "rastreo gps monterrey Mexico CDMX",
+    "rastreo gps guadalajara Mexico CDMX",
+    "tecnología satelital para vehículos Mexico CDMX",
+  ];
   const features = [
     {
       title: 'Monitoreo en tiempo real',
@@ -93,7 +120,7 @@ export default function SatelliteGuardPremiumMockup() {
   return (
     <div className="min-h-screen overflow-hidden bg-[#02050b] text-white">
       <section id="inicio" className="relative isolate min-h-screen border-b border-white/10 bg-[#02050b]">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-[70%_center] opacity-65" />
+        <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-[70%_center] opacity-65" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,3,9,0.76)_0%,rgba(1,3,9,0.48)_36%,rgba(1,3,9,0.20)_58%,rgba(1,3,9,0.40)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(251,191,36,0.12),transparent_16%),radial-gradient(circle_at_82%_20%,rgba(34,211,238,0.10),transparent_18%),radial-gradient(circle_at_56%_72%,rgba(15,23,42,0.26),transparent_36%)]" />
         <div className="absolute inset-0 opacity-[0.12] bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:54px_54px]" />
@@ -202,7 +229,7 @@ export default function SatelliteGuardPremiumMockup() {
             <div className="rounded-[2.5rem] border border-white/10 bg-[#07101c]/58 p-4 shadow-[0_30px_120px_rgba(0,0,0,0.55)] backdrop-blur-2xl">
               <div className="relative h-[38rem] overflow-hidden rounded-[2rem]">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_25%,rgba(34,211,238,0.20),transparent_14%),radial-gradient(circle_at_75%_22%,rgba(251,191,36,0.18),transparent_16%),linear-gradient(180deg,rgba(3,7,18,0.2),rgba(3,7,18,0.68))]" />
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80')] bg-cover bg-center opacity-20" />
+                <div className="absolute inset-0 bg-[url('/dashboard-bg.webp')] bg-cover bg-center opacity-20" />
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(2,6,23,0.84),rgba(2,6,23,0.36),rgba(2,6,23,0.76))]" />
 
                 <div className="absolute left-5 right-5 top-5 flex items-start justify-between gap-4">
@@ -283,6 +310,22 @@ export default function SatelliteGuardPremiumMockup() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-10">
+        <h2 className="text-3xl font-semibold">Servicios GPS en México</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <a href="/servicios/rastreo-gps" className="rounded-xl border border-white/15 p-4 hover:bg-white/5">Rastreo GPS en tiempo real</a>
+          <a href="/servicios/control-de-flotillas" className="rounded-xl border border-white/15 p-4 hover:bg-white/5">Control de flotillas</a>
+          <a href="/servicios/geocercas" className="rounded-xl border border-white/15 p-4 hover:bg-white/5">Geocercas y alertas</a>
+        </div>
+      </section>
+      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-10">
+        <h2 className="text-3xl font-semibold">Preguntas frecuentes</h2>
+        <div className="mt-6 space-y-4 text-white/80">
+          <div><h3 className="font-semibold text-white">¿Qué incluye el monitoreo GPS?</h3><p>Ubicación en vivo, historial de rutas, alertas críticas y panel de control para operación diaria.</p></div>
+          <div><h3 className="font-semibold text-white">¿Sirve para flotillas y activos?</h3><p>Sí, la plataforma está diseñada para flotillas, vehículos particulares y activos móviles.</p></div>
+          <div><h3 className="font-semibold text-white">¿Puedo configurar geocercas?</h3><p>Sí, puedes definir zonas y recibir alertas automáticas de entrada, salida o desvíos.</p></div>
+        </div>
+      </section>
       <section id="contacto" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="mb-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
@@ -486,6 +529,11 @@ export default function SatelliteGuardPremiumMockup() {
           </div>
         </div>
       </section>
+      <footer className="border-t border-white/10 bg-black/45">
+        <div className="mx-auto max-w-7xl px-6 py-8 text-center text-xs leading-7 text-white/45 lg:px-10">
+          {seoKeywords.join(" · ")}
+        </div>
+      </footer>
     </div>
   );
 }
