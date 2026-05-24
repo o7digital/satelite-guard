@@ -107,7 +107,6 @@ export default function SatelliteGuardPremiumMockup() {
                 ES
               </a>
               <button className="hidden rounded-full border border-white/15 px-4 py-2 text-sm text-white/80 transition hover:bg-white/10 md:inline-flex">Client access</button>
-              <button className="rounded-full bg-amber-400 px-5 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02]">Schedule demo</button>
             </div>
           </header>
 
@@ -125,15 +124,6 @@ export default function SatelliteGuardPremiumMockup() {
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/68">
                 V4 strengthens Satellite Guard's presence with a more professional image, clear operations, and precision technology for enterprise monitoring.
               </p>
-
-              <div className="mt-8 flex flex-wrap gap-4">
-                <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:scale-[1.02]">
-                  Explore the platform
-                </button>
-                <button className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10">
-                  Request a quote
-                </button>
-              </div>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
                 {stats.map((item) => (
