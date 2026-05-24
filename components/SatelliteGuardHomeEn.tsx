@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SatelliteGuardPremiumMockup() {
   const seoKeywords = [
     "gps monitoring Mexico CDMX",
@@ -100,12 +102,12 @@ export default function SatelliteGuardPremiumMockup() {
               </nav>
             </details>
             <div className="flex items-center gap-3">
-              <a
+              <Link
                 href="/"
                 className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20"
               >
                 ES
-              </a>
+              </Link>
               <button className="hidden rounded-full border border-white/15 px-4 py-2 text-sm text-white/80 transition hover:bg-white/10 md:inline-flex">Client access</button>
             </div>
           </header>
@@ -122,7 +124,7 @@ export default function SatelliteGuardPremiumMockup() {
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/68">
-                V4 strengthens Satellite Guard's presence with a more professional image, clear operations, and precision technology for enterprise monitoring.
+                V4 strengthens Satellite Guard&apos;s presence with a more professional image, clear operations, and precision technology for enterprise monitoring.
               </p>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -320,12 +322,12 @@ export default function SatelliteGuardPremiumMockup() {
               The site now has a much more memorable presence.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-white/64">
-              V4 reinforces the site's image and better separates the hero from the dashboard.
+              V4 reinforces the site&apos;s image and better separates the hero from the dashboard.
             </p>
           </div>
 
           <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(250,204,21,0.10),rgba(255,255,255,0.04),rgba(34,211,238,0.08))] p-8">
-            <div className="text-lg font-semibold">What's better now</div>
+            <div className="text-lg font-semibold">What&apos;s better now</div>
             <ul className="mt-5 space-y-4 text-sm leading-7 text-white/70">
               <li>Hero with clearer visual focus.</li>
               <li>More cinematic and aspirational composition.</li>

@@ -469,7 +469,7 @@ export default function SatelliteGuardPremiumMockup() {
         <div className="overflow-hidden rounded-[2.2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(250,204,21,0.14),rgba(255,255,255,0.03),rgba(34,211,238,0.09))] p-8 md:p-10">
           <div className="grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Solicita una demostración</div>
+              <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Solicita una cotización</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
                 Protege vehículos, flotillas y activos con una imagen de marca realmente más fuerte.
               </h2>
@@ -512,7 +512,7 @@ export default function SatelliteGuardPremiumMockup() {
                   type="submit"
                   className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black"
                 >
-                  Solicitar demo
+                  Solicitar Demo
                 </button>
               </div>
             </form>
