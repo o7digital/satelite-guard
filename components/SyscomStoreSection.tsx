@@ -106,32 +106,34 @@ async function fetchSyscomProducts(): Promise<{ items: SyscomProduct[]; error?: 
     if (!tokenJson.access_token) return { items: localFallback, error: 'Token SYSCOM vacío' }
     const accessToken = tokenJson.access_token
 
-    const candidates = [
+    const sources = [
       'https://developers.syscom.mx/api/v1/marcas/syscom/productos?stock=1&agrupar=1',
-      'https://developers.syscom.mx/api/v1/productos?marca=syscom&stock=1&agrupar=1',
-      'https://developers.syscom.mx/api/v1/productos?busqueda=gps&stock=1&agrupar=1',
+      'https://developers.syscom.mx/api/v1/productos?busqueda=gps&agrupar=1',
     ]
 
-    let lastStatus = 500
-    for (const baseUrl of candidates) {
+    const merged = new Map<string, SyscomProduct>()
+    let anySourceOk = false
+
+    for (const baseUrl of sources) {
       const firstUrl = `${baseUrl}&pagina=1`
       const firstPage = await fetchProductsPage(firstUrl, accessToken)
+      if (!firstPage) continue
+      anySourceOk = true
       const firstItems = getProducts(firstPage)
-      if (!firstPage) {
-        lastStatus = 500
-        continue
-      }
-
       const pageCount = Array.isArray(firstPage) ? 1 : Number(firstPage.paginas || 1)
       const urls = Array.from({ length: Math.max(0, pageCount - 1) }, (_, idx) => `${baseUrl}&pagina=${idx + 2}`)
       const restPages = await Promise.all(urls.map((url) => fetchProductsPage(url, accessToken)))
       const items = [...firstItems, ...restPages.flatMap(getProducts)]
 
-      if (items.length) return { items }
-      console.error('[SYSCOM] products empty payload', { url: firstUrl })
+      for (const item of items) {
+        const key = asText(item.producto_id) || asText(item.sku) || asText(item.modelo) || ''
+        if (key) merged.set(key, item)
+      }
     }
 
-    return { items: localFallback, error: `Consulta productos SYSCOM fallida (${lastStatus})` }
+    if (merged.size > 0) return { items: Array.from(merged.values()) }
+    if (anySourceOk) return { items: localFallback, error: 'Sin resultados de catálogo para filtros actuales' }
+    return { items: localFallback, error: 'Consulta productos SYSCOM fallida' }
   } catch (error) {
     console.error('[SYSCOM] unexpected error', error)
     return { items: localFallback, error: 'No se pudo conectar con SYSCOM' }
