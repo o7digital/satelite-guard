@@ -6,11 +6,17 @@ import type { StoreProduct } from './SyscomStoreSection'
 const storageKey = 'satellite-guard-quote-products'
 const eventName = 'satellite-guard-quote-products-updated'
 
-export default function SyscomStoreGrid({ products }: { products: StoreProduct[] }) {
+type SyscomStoreGridProps = {
+  products: StoreProduct[]
+  locale?: 'es' | 'en'
+}
+
+export default function SyscomStoreGrid({ products, locale = 'es' }: SyscomStoreGridProps) {
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState('all')
   const [stockOnly, setStockOnly] = useState(false)
   const [selectedProducts, setSelectedProducts] = useState<StoreProduct[]>([])
+  const isEnglish = locale === 'en'
 
   useEffect(() => {
     window.setTimeout(() => {
@@ -71,7 +77,7 @@ export default function SyscomStoreGrid({ products }: { products: StoreProduct[]
         <input
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Buscar producto, modelo o categoría"
+          placeholder={isEnglish ? 'Search product, model or category' : 'Buscar producto, modelo o categoría'}
           className="h-12 rounded-lg border border-white/10 bg-white/[0.04] px-4 text-sm text-white outline-none transition placeholder:text-white/40 focus:border-cyan-300/50"
         />
         <select
@@ -79,7 +85,7 @@ export default function SyscomStoreGrid({ products }: { products: StoreProduct[]
           onChange={(event) => setCategory(event.target.value)}
           className="h-12 rounded-lg border border-white/10 bg-white/[0.04] px-4 text-sm text-white outline-none transition focus:border-cyan-300/50"
         >
-          <option value="all">Todas las categorías</option>
+          <option value="all">{isEnglish ? 'All categories' : 'Todas las categorías'}</option>
           {categories.map((item) => (
             <option key={item} value={item}>
               {item}
@@ -93,12 +99,12 @@ export default function SyscomStoreGrid({ products }: { products: StoreProduct[]
             onChange={(event) => setStockOnly(event.target.checked)}
             className="h-4 w-4 accent-cyan-300"
           />
-          Con stock
+          {isEnglish ? 'In stock' : 'Con stock'}
         </label>
       </div>
 
       <div className="mb-5 text-sm text-white/55">
-        {filteredProducts.length} de {products.length} productos
+        {filteredProducts.length} {isEnglish ? 'of' : 'de'} {products.length} {isEnglish ? 'products' : 'productos'}
       </div>
 
       {selectedProducts.length > 0 ? (
@@ -106,11 +112,14 @@ export default function SyscomStoreGrid({ products }: { products: StoreProduct[]
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
               <div className="text-sm font-semibold text-amber-200">
-                {selectedProducts.length} producto{selectedProducts.length > 1 ? 's' : ''} seleccionado
-                {selectedProducts.length > 1 ? 's' : ''}
+                {isEnglish
+                  ? `${selectedProducts.length} product${selectedProducts.length > 1 ? 's' : ''} selected`
+                  : `${selectedProducts.length} producto${selectedProducts.length > 1 ? 's' : ''} seleccionado${selectedProducts.length > 1 ? 's' : ''}`}
               </div>
               <div className="mt-1 text-xs text-white/60">
-                Se agregará{selectedProducts.length > 1 ? 'n' : ''} al mensaje del formulario de cotización.
+                {isEnglish
+                  ? 'They will be added to the quote form message.'
+                  : `Se agregará${selectedProducts.length > 1 ? 'n' : ''} al mensaje del formulario de cotización.`}
               </div>
             </div>
             <button
@@ -118,7 +127,7 @@ export default function SyscomStoreGrid({ products }: { products: StoreProduct[]
               onClick={goToQuoteForm}
               className="rounded-full bg-amber-300 px-5 py-2 text-sm font-semibold text-black transition hover:bg-amber-200"
             >
-              Pedir cotización
+              {isEnglish ? 'Request quote' : 'Pedir cotización'}
             </button>
           </div>
         </div>
@@ -145,14 +154,16 @@ export default function SyscomStoreGrid({ products }: { products: StoreProduct[]
             <div className="p-5">
               <div className="text-xs uppercase text-white/45">{product.brand}</div>
               <h3 className="mt-2 line-clamp-3 text-base font-semibold leading-6">{product.title}</h3>
-              {product.model ? <p className="mt-3 text-sm text-white/60">Modelo: {product.model}</p> : null}
+              {product.model ? <p className="mt-3 text-sm text-white/60">{isEnglish ? 'Model' : 'Modelo'}: {product.model}</p> : null}
               {product.category ? <p className="mt-1 text-sm text-white/45">{product.category}</p> : null}
               <div className="mt-4 flex items-center justify-between gap-3">
                 {product.price ? <p className="text-base font-semibold text-amber-200">{product.price}</p> : <span />}
                 {product.stock ? <p className="text-sm text-white/65">Stock: {product.stock}</p> : null}
               </div>
               <div className="mt-4 rounded-full border border-amber-300/30 px-4 py-2 text-center text-sm font-semibold text-amber-200">
-                {selectedProducts.some((item) => item.key === product.key) ? 'Seleccionado' : 'Seleccionar para cotización'}
+                {selectedProducts.some((item) => item.key === product.key)
+                  ? (isEnglish ? 'Selected' : 'Seleccionado')
+                  : (isEnglish ? 'Select for quote' : 'Seleccionar para cotización')}
               </div>
             </div>
             </button>

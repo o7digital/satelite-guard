@@ -170,22 +170,27 @@ async function fetchSyscomProducts(): Promise<{ items: SyscomProduct[]; error?: 
   }
 }
 
-export default async function SyscomStoreSection() {
+type SyscomStoreSectionProps = {
+  locale?: 'es' | 'en'
+}
+
+export default async function SyscomStoreSection({ locale = 'es' }: SyscomStoreSectionProps) {
   const { items, error } = await fetchSyscomProducts()
   const products = items.map(normalizeProduct)
+  const isEnglish = locale === 'en'
 
   return (
     <section id="tienda" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
       <div className="mb-10 flex items-end justify-between gap-4">
         <div>
-          <div className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Tienda</div>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">Catálogo SYSCOM</h2>
+          <div className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">{isEnglish ? 'Store' : 'Tienda'}</div>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">{isEnglish ? 'SYSCOM catalog' : 'Catálogo SYSCOM'}</h2>
         </div>
       </div>
 
       {error ? <p className="mb-6 text-sm text-amber-300">{error}</p> : null}
 
-      <SyscomStoreGrid products={products} />
+      <SyscomStoreGrid products={products} locale={locale} />
     </section>
   )
 }

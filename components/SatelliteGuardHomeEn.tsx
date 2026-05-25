@@ -1,4 +1,6 @@
 import Link from "next/link";
+import QuoteForm from "./QuoteForm";
+import SyscomStoreSection from "./SyscomStoreSection";
 
 export default function SatelliteGuardPremiumMockup() {
   const seoKeywords = [
@@ -42,9 +44,9 @@ export default function SatelliteGuardPremiumMockup() {
 
   const stats = [
     { value: '24/7', label: 'Active monitoring' },
-    { value: '8,500+', label: 'Tracked units' },
+    { value: '3,500+', label: 'Tracked units' },
     { value: '120k+', label: 'Processed events' },
-    { value: '15+', label: 'Years of experience' },
+    { value: '19+', label: 'Years of experience' },
   ];
 
   const pillars = [
@@ -67,7 +69,7 @@ export default function SatelliteGuardPremiumMockup() {
 
   return (
     <div className="min-h-screen overflow-hidden bg-[#02050b] text-white">
-      <section className="relative isolate min-h-screen border-b border-white/10 bg-[#02050b]">
+      <section id="inicio" className="relative isolate min-h-screen border-b border-white/10 bg-[#02050b]">
         <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-[70%_center] opacity-65" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,3,9,0.76)_0%,rgba(1,3,9,0.48)_36%,rgba(1,3,9,0.20)_58%,rgba(1,3,9,0.40)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(251,191,36,0.12),transparent_16%),radial-gradient(circle_at_82%_20%,rgba(34,211,238,0.10),transparent_18%),radial-gradient(circle_at_56%_72%,rgba(15,23,42,0.26),transparent_36%)]" />
@@ -76,29 +78,31 @@ export default function SatelliteGuardPremiumMockup() {
         <div className="absolute right-[-10%] top-[6%] h-[30rem] w-[30rem] rounded-full bg-cyan-400/10 blur-3xl" />
 
         <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col px-6 py-6 lg:px-10">
-          <header className="flex items-center justify-between rounded-full border border-white/10 bg-white/[0.06] px-5 py-3 shadow-2xl shadow-black/30 backdrop-blur-2xl">
+          <header className="relative z-[10000] flex items-center justify-between rounded-full border border-white/10 bg-white/[0.06] px-5 py-3 shadow-2xl shadow-black/30 backdrop-blur-2xl">
             <div>
               <div className="text-xs uppercase tracking-[0.38em] text-amber-300/85">Satellite Guard</div>
               <div className="text-sm text-white/50">Elite GPS Monitoring</div>
             </div>
-            <nav className="hidden gap-8 text-sm text-white/70 md:flex">
-              <a href="#" className="transition hover:text-white">Home</a>
-              <a href="#" className="transition hover:text-white">Technology</a>
-              <a href="#" className="transition hover:text-white">Fleets</a>
+            <nav className="hidden gap-6 text-base font-medium text-white/80 md:flex xl:gap-8">
+              <a href="#inicio" className="transition hover:text-white">Home</a>
+              <a href="#tecnologia" className="transition hover:text-white">Technology</a>
+              <a href="#flotillas" className="transition hover:text-white">Fleets</a>
               <a href="#tienda" className="transition hover:text-white">Products</a>
-              <a href="#" className="transition hover:text-white">Contact</a>
+              <a href="#contacto" className="transition hover:text-white">Contact</a>
             </nav>
-            <details className="relative md:hidden">
-              <summary className="list-none rounded-full border border-white/20 bg-white/10 px-3 py-2 text-white/90">
+            <details className="relative z-[10001] md:hidden">
+              <summary className="cursor-pointer list-none rounded-full border border-white/20 bg-white/10 px-3 py-2 text-white/90">
                 <span className="sr-only">Open menu</span>
                 <span aria-hidden="true">☰</span>
               </summary>
-              <nav className="absolute right-0 top-12 z-30 w-52 rounded-2xl border border-white/15 bg-[#07101c]/95 p-3 text-sm text-white/85 shadow-2xl backdrop-blur-xl">
-                <a href="#" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Home</a>
-                <a href="#" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Technology</a>
-                <a href="#" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Fleets</a>
-                <a href="#tienda" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Products</a>
-                <a href="#" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Contact</a>
+              <div className="fixed inset-0 z-[9998] bg-black/65" />
+              <nav className="fixed inset-y-0 left-0 z-[9999] h-dvh w-[82vw] max-w-xs border-r border-white/15 bg-[#020812] px-6 py-8 text-xl font-semibold text-white shadow-2xl shadow-black/60">
+                <div className="mb-8 text-xs uppercase tracking-[0.32em] text-amber-300/80">Menu</div>
+                <a href="#inicio" className="block rounded-xl px-3 py-3 transition hover:bg-white/10">Home</a>
+                <a href="#tecnologia" className="block rounded-xl px-3 py-3 transition hover:bg-white/10">Technology</a>
+                <a href="#flotillas" className="block rounded-xl px-3 py-3 transition hover:bg-white/10">Fleets</a>
+                <a href="#tienda" className="block rounded-xl px-3 py-3 transition hover:bg-white/10">Products</a>
+                <a href="#contacto" className="block rounded-xl px-3 py-3 transition hover:bg-white/10">Contact</a>
               </nav>
             </details>
             <div className="flex items-center gap-3">
@@ -108,24 +112,29 @@ export default function SatelliteGuardPremiumMockup() {
               >
                 ES
               </Link>
-              <button className="hidden rounded-full border border-white/15 px-4 py-2 text-sm text-white/80 transition hover:bg-white/10 md:inline-flex">Client access</button>
+              <a
+                href="#contacto"
+                className="hidden rounded-full border border-amber-300/40 bg-amber-300 px-4 py-2 text-sm font-semibold text-black shadow-lg shadow-amber-300/20 transition hover:bg-amber-200 md:inline-flex"
+              >
+                Request quote
+              </a>
             </div>
           </header>
 
           <div className="relative flex flex-1 items-center py-20 lg:min-h-[88vh] lg:py-24 xl:py-28">
-            <div className="relative z-10 max-w-3xl">
+            <div className="relative z-10 max-w-5xl">
               <div className="mb-5 inline-flex items-center rounded-full border border-amber-300/20 bg-amber-300/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-amber-200">
                 Security · Intelligence · Total control
               </div>
-              <h1 className="text-5xl font-semibold leading-[0.92] tracking-tight md:text-6xl xl:text-[5.35rem]">
-                GPS monitoring with a presence
-                <span className="block bg-gradient-to-r from-white via-amber-200 to-cyan-200 bg-clip-text text-transparent">
-                  stronger and more reliable.
+              <div className="mb-5 inline-flex items-center rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-xs uppercase tracking-[0.24em] text-cyan-100">
+                GPS monitoring for your units
+              </div>
+              <h1 className="text-5xl font-semibold leading-[0.92] tracking-tight md:text-6xl xl:text-[5rem]">
+                <span className="block md:whitespace-nowrap">We are SYSCOM</span>
+                <span className="block bg-gradient-to-r from-white via-amber-200 to-cyan-200 bg-clip-text text-transparent md:whitespace-nowrap">
+                  distributors in Mexico
                 </span>
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/68">
-                V4 strengthens Satellite Guard&apos;s presence with a more professional image, clear operations, and precision technology for enterprise monitoring.
-              </p>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
                 {stats.map((item) => (
@@ -140,7 +149,7 @@ export default function SatelliteGuardPremiumMockup() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+      <section id="tecnologia" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="rounded-[2.3rem] border border-white/10 bg-[linear-gradient(180deg,#040915_0%,#07101c_52%,#040915_100%)] p-6 lg:p-8">
           <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
@@ -281,7 +290,7 @@ export default function SatelliteGuardPremiumMockup() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-white/[0.025]">
+      <section id="flotillas" className="border-y border-white/10 bg-white/[0.025]">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
           <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
@@ -334,22 +343,21 @@ export default function SatelliteGuardPremiumMockup() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-10">
+      <SyscomStoreSection locale="en" />
+
+      <section id="contacto" className="mx-auto max-w-7xl px-6 pb-20 lg:px-10">
         <div className="overflow-hidden rounded-[2.2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(250,204,21,0.14),rgba(255,255,255,0.03),rgba(34,211,238,0.09))] p-8 md:p-10">
-          <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Request a demo</div>
+              <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Request a quote</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-                Protect vehicles, fleets, and assets with a truly stronger brand image.
+                Protect vehicles, fleets, and assets with reliable GPS monitoring.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-8 text-white/70">
-                This V4 can now serve as a stronger foundation for the next frontend phase.
+                Select products from the catalog or send us your requirements. We will prepare a quote for your operation.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4 lg:justify-end">
-              <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black">Approve design</button>
-              <button className="rounded-full border border-white/15 bg-black/20 px-6 py-3 text-sm font-medium text-white">Request backend demo</button>
-            </div>
+            <QuoteForm locale="en" />
           </div>
         </div>
       </section>
