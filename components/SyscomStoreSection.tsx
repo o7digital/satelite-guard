@@ -1,12 +1,14 @@
 import React from 'react'
 
 type SyscomProduct = {
+  producto_id?: string
   sku?: string
   modelo?: string
   titulo?: string
-  marca?: string
+  marca?: string | { nombre?: string }
   precio?: number | string
   existencia?: number | string
+  total_existencia?: number | string
 }
 
 const localFallback: SyscomProduct[] = [
@@ -27,8 +29,8 @@ async function fetchSyscomProducts(): Promise<{ items: SyscomProduct[]; error?: 
   try {
     const tokenRes = await fetch('https://developers.syscom.mx/oauth/token', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/json' },
-      body: new URLSearchParams({ grant_type: 'client_credentials', client_id: clientId, client_secret: clientSecret }),
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ grant_type: 'client_credentials', client_id: clientId, client_secret: clientSecret }),
       cache: 'no-store',
     })
 
@@ -42,10 +44,9 @@ async function fetchSyscomProducts(): Promise<{ items: SyscomProduct[]; error?: 
     if (!tokenJson.access_token) return { items: localFallback, error: 'Token SYSCOM vacío' }
 
     const candidates = [
-      'https://developers.syscom.mx/api/v1/productos?pagina=1',
-      'https://developers.syscom.mx/api/v1/productos?page=1',
-      'https://developers.syscom.mx/api/v1/productos?pagina=1&stock=1',
-      'https://developers.syscom.mx/api/v1/productos/all',
+      'https://developers.syscom.mx/api/v1/marcas/syscom/productos?stock=1&agrupar=1&pagina=1',
+      'https://developers.syscom.mx/api/v1/productos?marca=syscom&stock=1&agrupar=1&pagina=1',
+      'https://developers.syscom.mx/api/v1/productos?busqueda=gps&stock=1&agrupar=1&pagina=1',
     ]
 
     let lastStatus = 500
@@ -97,12 +98,12 @@ export default async function SyscomStoreSection() {
 
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {items.map((product, idx) => (
-          <article key={`${product.sku || product.modelo || 'item'}-${idx}`} className="rounded-[1.6rem] border border-white/10 bg-white/[0.04] p-6">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">{product.marca || 'SYSCOM'}</div>
+          <article key={`${product.producto_id || product.sku || product.modelo || 'item'}-${idx}`} className="rounded-[1.6rem] border border-white/10 bg-white/[0.04] p-6">
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">{typeof product.marca === 'string' ? product.marca : product.marca?.nombre || 'SYSCOM'}</div>
             <h3 className="mt-2 text-xl font-semibold">{product.titulo || product.modelo || product.sku || 'Producto'}</h3>
-            {product.sku ? <p className="mt-2 text-sm text-white/60">SKU: {product.sku}</p> : null}
+            {product.modelo || product.sku ? <p className="mt-2 text-sm text-white/60">Modelo: {product.modelo || product.sku}</p> : null}
             {product.precio !== undefined ? <p className="mt-4 text-lg font-semibold text-amber-200">${product.precio}</p> : null}
-            {product.existencia !== undefined ? <p className="mt-1 text-sm text-white/65">Existencia: {product.existencia}</p> : null}
+            {product.existencia !== undefined || product.total_existencia !== undefined ? <p className="mt-1 text-sm text-white/65">Existencia: {product.existencia ?? product.total_existencia}</p> : null}
           </article>
         ))}
       </div>
