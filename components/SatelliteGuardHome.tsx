@@ -131,7 +131,7 @@ export default async function SatelliteGuardPremiumMockup() {
         <div className="absolute right-[-10%] top-[6%] h-[30rem] w-[30rem] rounded-full bg-cyan-400/10 blur-3xl" />
 
         <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col px-6 py-6 lg:px-10">
-          <header className="flex items-center justify-between rounded-full border border-white/10 bg-white/[0.06] px-5 py-3 shadow-2xl shadow-black/30 backdrop-blur-2xl">
+          <header className="relative z-[10000] flex items-center justify-between rounded-full border border-white/10 bg-white/[0.06] px-5 py-3 shadow-2xl shadow-black/30 backdrop-blur-2xl">
             <div>
               <div className="text-xs uppercase tracking-[0.38em] text-amber-300/85">Satellite Guard</div>
               <div className="text-sm text-white/50">Elite GPS Monitoring</div>
@@ -144,18 +144,20 @@ export default async function SatelliteGuardPremiumMockup() {
               <a href="#tienda" className="transition hover:text-white">Productos</a>
               <a href="#contacto" className="transition hover:text-white">Contacto</a>
             </nav>
-            <details className="relative z-[120] md:hidden">
+            <details className="relative z-[10001] md:hidden">
               <summary className="cursor-pointer list-none rounded-full border border-white/20 bg-white/10 px-3 py-2 text-white/90">
                 <span className="sr-only">Abrir menú</span>
                 <span aria-hidden="true">☰</span>
               </summary>
-              <nav className="absolute right-0 top-12 w-64 rounded-2xl border border-white/15 bg-[#07101c]/98 p-3 text-base font-medium text-white/90 shadow-2xl shadow-black/40 backdrop-blur-xl">
-                <a href="#inicio" className="block rounded-xl px-3 py-2.5 transition hover:bg-white/10">Inicio</a>
-                <a href="#tecnologia" className="block rounded-xl px-3 py-2.5 transition hover:bg-white/10">Tecnología</a>
-                <a href="#flotillas" className="block rounded-xl px-3 py-2.5 transition hover:bg-white/10">Flotillas</a>
-                <a href="#quienes-somos" className="block rounded-xl px-3 py-2.5 transition hover:bg-white/10">Quiénes Somos</a>
-                <a href="#tienda" className="block rounded-xl px-3 py-2.5 transition hover:bg-white/10">Productos</a>
-                <a href="#contacto" className="block rounded-xl px-3 py-2.5 transition hover:bg-white/10">Contacto</a>
+              <div className="fixed inset-0 z-[9998] bg-black/65" />
+              <nav className="fixed inset-y-0 left-0 z-[9999] h-dvh w-[82vw] max-w-xs border-r border-white/15 bg-[#020812] px-6 py-8 text-xl font-semibold text-white shadow-2xl shadow-black/60">
+                <div className="mb-8 text-xs uppercase tracking-[0.32em] text-amber-300/80">Menú</div>
+                <a href="#inicio" className="block rounded-xl px-3 py-3 transition hover:bg-white/10">Inicio</a>
+                <a href="#tecnologia" className="block rounded-xl px-3 py-3 transition hover:bg-white/10">Tecnología</a>
+                <a href="#flotillas" className="block rounded-xl px-3 py-3 transition hover:bg-white/10">Flotillas</a>
+                <a href="#quienes-somos" className="block rounded-xl px-3 py-3 transition hover:bg-white/10">Quiénes Somos</a>
+                <a href="#tienda" className="block rounded-xl px-3 py-3 transition hover:bg-white/10">Productos</a>
+                <a href="#contacto" className="block rounded-xl px-3 py-3 transition hover:bg-white/10">Contacto</a>
               </nav>
             </details>
             <div className="flex items-center gap-3">
