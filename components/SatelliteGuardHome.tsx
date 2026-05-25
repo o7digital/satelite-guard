@@ -150,7 +150,7 @@ export default async function SatelliteGuardPremiumMockup() {
                 <span className="sr-only">Abrir menú</span>
                 <span aria-hidden="true">☰</span>
               </summary>
-              <nav className="fixed right-4 top-20 z-[200] w-56 rounded-2xl border border-white/15 bg-[#07101c]/95 p-3 text-sm text-white/85 shadow-2xl backdrop-blur-xl">
+              <nav className="absolute right-0 top-14 z-[200] w-56 rounded-2xl border border-white/15 bg-[#07101c]/98 p-3 text-sm text-white/90 shadow-2xl backdrop-blur-xl">
                 <a href="#inicio" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Inicio</a>
                 <a href="#tecnologia" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Tecnología</a>
                 <a href="#flotillas" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Flotillas</a>
