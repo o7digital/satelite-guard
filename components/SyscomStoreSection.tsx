@@ -7,54 +7,61 @@ type SyscomProduct = {
   marca?: string
   precio?: number | string
   existencia?: number | string
-  imagen?: string
 }
+
+const localFallback: SyscomProduct[] = [
+  { titulo: 'PRO43G', marca: 'SYSCOM' },
+  { titulo: 'Global Star', marca: 'SYSCOM' },
+  { titulo: 'CTS-100', marca: 'SYSCOM' },
+  { titulo: 'Teléfono Satelital Iridium', marca: 'SYSCOM' },
+]
 
 async function fetchSyscomProducts(): Promise<{ items: SyscomProduct[]; error?: string }> {
   const clientId = process.env.SYSCOM_CLIENT_ID
   const clientSecret = process.env.SYSCOM_CLIENT_SECRET
 
   if (!clientId || !clientSecret) {
-    return { items: [], error: 'Credenciales SYSCOM no configuradas' }
+    return { items: localFallback, error: 'SYSCOM no configurado en Vercel (usando catálogo base)' }
   }
 
   try {
     const tokenRes = await fetch('https://developers.syscom.mx/oauth/token', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/json' },
       body: new URLSearchParams({ grant_type: 'client_credentials', client_id: clientId, client_secret: clientSecret }),
       cache: 'no-store',
     })
 
     if (!tokenRes.ok) {
-      console.error('[SYSCOM] token error', { status: tokenRes.status })
-      return { items: [], error: `Auth SYSCOM fallida (${tokenRes.status})` }
+      const body = await tokenRes.text()
+      console.error('[SYSCOM] token error', { status: tokenRes.status, body: body.slice(0, 400) })
+      return { items: localFallback, error: `Auth SYSCOM fallida (${tokenRes.status})` }
     }
 
     const tokenJson = (await tokenRes.json()) as { access_token?: string }
-    if (!tokenJson.access_token) return { items: [], error: 'Token SYSCOM vacío' }
+    if (!tokenJson.access_token) return { items: localFallback, error: 'Token SYSCOM vacío' }
 
     const candidates = [
-      'https://developers.syscom.mx/api/v1/productos?page=1',
       'https://developers.syscom.mx/api/v1/productos?pagina=1',
+      'https://developers.syscom.mx/api/v1/productos?page=1',
+      'https://developers.syscom.mx/api/v1/productos?pagina=1&stock=1',
       'https://developers.syscom.mx/api/v1/productos/all',
     ]
 
     let lastStatus = 500
     for (const url of candidates) {
       const productsRes = await fetch(url, {
-        headers: { Authorization: `Bearer ${tokenJson.access_token}` },
+        headers: { Authorization: `Bearer ${tokenJson.access_token}`, Accept: 'application/json' },
         cache: 'no-store',
       })
       lastStatus = productsRes.status
       if (!productsRes.ok) {
-        console.error('[SYSCOM] products error', { url, status: productsRes.status })
+        const body = await productsRes.text()
+        console.error('[SYSCOM] products error', { url, status: productsRes.status, body: body.slice(0, 400) })
         continue
       }
 
-      const productsJson = (await productsRes.json()) as
-        | { productos?: SyscomProduct[]; data?: SyscomProduct[] }
-        | SyscomProduct[]
+      const productsJson = (await productsRes.json()) as { productos?: SyscomProduct[]; data?: SyscomProduct[] } | SyscomProduct[]
       const items = Array.isArray(productsJson)
         ? productsJson
         : Array.isArray(productsJson.productos)
@@ -62,13 +69,15 @@ async function fetchSyscomProducts(): Promise<{ items: SyscomProduct[]; error?: 
           : Array.isArray(productsJson.data)
             ? productsJson.data
             : []
-      if (items.length) return { items }
+
+      if (items.length) return { items: items.slice(0, 24) }
       console.error('[SYSCOM] products empty payload', { url })
     }
 
-    return { items: [], error: `Consulta productos SYSCOM fallida (${lastStatus})` }
-  } catch {
-    return { items: [], error: 'No se pudo conectar con SYSCOM' }
+    return { items: localFallback, error: `Consulta productos SYSCOM fallida (${lastStatus})` }
+  } catch (error) {
+    console.error('[SYSCOM] unexpected error', error)
+    return { items: localFallback, error: 'No se pudo conectar con SYSCOM' }
   }
 }
 
