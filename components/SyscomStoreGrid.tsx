@@ -81,7 +81,7 @@ export default function SyscomStoreGrid({ products }: { products: StoreProduct[]
               {product.model ? <p className="mt-3 text-sm text-white/60">Modelo: {product.model}</p> : null}
               {product.category ? <p className="mt-1 text-sm text-white/45">{product.category}</p> : null}
               <div className="mt-4 flex items-center justify-between gap-3">
-                {product.price ? <p className="text-base font-semibold text-amber-200">${product.price}</p> : <span />}
+                {product.price ? <p className="text-base font-semibold text-amber-200">{product.price}</p> : <span />}
                 {product.stock ? <p className="text-sm text-white/65">Stock: {product.stock}</p> : null}
               </div>
             </div>

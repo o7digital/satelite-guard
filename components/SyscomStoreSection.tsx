@@ -8,7 +8,13 @@ type SyscomProduct = {
   titulo?: string
   marca?: string | { nombre?: string }
   precio?: number | string
-  existencia?: number | string
+  precios?: {
+    precio_1?: number | string
+    precio_lista?: number | string
+    precio_especial?: number | string
+    precio_descuento?: number | string
+  }
+  existencia?: number | string | { nuevo?: number | string }
   total_existencia?: number | string
   img_portada?: string
   categorias?: Array<{ nombre?: string; nivel?: number }>
@@ -38,16 +44,40 @@ function asText(value: unknown): string | undefined {
   return undefined
 }
 
+function asNumber(value: unknown): number | undefined {
+  if (typeof value === 'number' && Number.isFinite(value)) return value
+  if (typeof value === 'string') {
+    const parsed = Number(value.replace(/,/g, ''))
+    return Number.isFinite(parsed) ? parsed : undefined
+  }
+  return undefined
+}
+
+function formatMxn(value: number): string {
+  return new Intl.NumberFormat('es-MX', { currency: 'MXN', maximumFractionDigits: 2, style: 'currency' }).format(value)
+}
+
 function normalizeProduct(product: SyscomProduct, idx: number): StoreProduct {
   const brand = typeof product.marca === 'string' ? product.marca : asText(product.marca?.nombre)
   const category = product.categorias?.find((item) => item.nivel === 1)?.nombre || product.categorias?.[0]?.nombre
+  const basePrice =
+    asNumber(product.precio) ||
+    asNumber(product.precios?.precio_1) ||
+    asNumber(product.precios?.precio_lista) ||
+    asNumber(product.precios?.precio_especial) ||
+    asNumber(product.precios?.precio_descuento)
+  const stock =
+    asText(product.total_existencia) ||
+    asText(product.existencia) ||
+    (typeof product.existencia === 'object' ? asText(product.existencia.nuevo) : undefined)
+
   return {
     key: asText(product.producto_id) || asText(product.sku) || asText(product.modelo) || `item-${idx}`,
     title: asText(product.titulo) || asText(product.modelo) || asText(product.sku) || 'Producto',
     brand: brand || 'SYSCOM',
     model: asText(product.modelo) || asText(product.sku),
-    price: asText(product.precio),
-    stock: asText(product.existencia) || asText(product.total_existencia),
+    price: basePrice ? formatMxn(basePrice * 1.55) : undefined,
+    stock,
     image: asText(product.img_portada),
     category: asText(category),
   }

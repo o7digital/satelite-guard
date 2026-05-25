@@ -179,6 +179,9 @@ export default async function SatelliteGuardPremiumMockup() {
               <div className="mb-5 inline-flex items-center rounded-full border border-amber-300/20 bg-amber-300/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-amber-200">
                 Seguridad · Inteligencia · Control total
               </div>
+              <div className="mb-5 inline-flex items-center rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-xs uppercase tracking-[0.24em] text-cyan-100">
+                SOMOS DISTRIBUIDORES SYSCOM EN MEXICO.
+              </div>
               <h1 className="text-5xl font-semibold leading-[0.92] tracking-tight md:text-6xl xl:text-[5.35rem]">
                 Monitoreo GPS con una presencia
                 <span className="block bg-gradient-to-r from-white via-amber-200 to-cyan-200 bg-clip-text text-transparent">
@@ -189,13 +192,15 @@ export default async function SatelliteGuardPremiumMockup() {
                 La V4 fortalece la presencia de Satellite Guard con una imagen más profesional, operación clara y tecnología de precisión para monitoreo empresarial.
               </p>
 
-              <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                {stats.map((item) => (
-                  <div key={item.label} className="rounded-[1.35rem] border border-white/10 bg-black/30 p-4 shadow-xl shadow-black/30 backdrop-blur-xl">
+              <div className="mt-10 overflow-hidden">
+                <div className="flex w-max animate-[hero-stats_18s_linear_infinite] gap-4">
+                  {[...stats, ...stats].map((item, index) => (
+                  <div key={`${item.label}-${index}`} className="w-64 rounded-[1.35rem] border border-white/10 bg-black/30 p-4 shadow-xl shadow-black/30 backdrop-blur-xl">
                     <div className="text-2xl font-semibold text-white">{item.value}</div>
                     <div className="mt-1 text-sm text-white/55">{item.label}</div>
                   </div>
                 ))}
+                </div>
               </div>
               <div className="mt-8 flex items-center gap-2">
                 <span className="h-1.5 w-6 rounded-full bg-amber-300/80" />
