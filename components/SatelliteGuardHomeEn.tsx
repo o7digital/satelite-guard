@@ -135,11 +135,6 @@ export default function SatelliteGuardPremiumMockup() {
                   </div>
                 ))}
               </div>
-              <div className="mt-8 flex items-center gap-2">
-                <span className="h-1.5 w-6 rounded-full bg-amber-300/80" />
-                <span className="h-1.5 w-1.5 rounded-full bg-white/35" />
-                <span className="h-1.5 w-1.5 rounded-full bg-white/35" />
-              </div>
             </div>
           </div>
         </div>

@@ -188,20 +188,13 @@ export default async function SatelliteGuardPremiumMockup() {
                 La V4 fortalece la presencia de Satellite Guard con una imagen más profesional, operación clara y tecnología de precisión para monitoreo empresarial.
               </p>
 
-              <div className="mt-10 overflow-hidden">
-                <div className="flex w-max animate-[hero-stats_18s_linear_infinite] gap-4">
-                  {[...stats, ...stats].map((item, index) => (
-                  <div key={`${item.label}-${index}`} className="w-64 rounded-[1.35rem] border border-white/10 bg-black/30 p-4 shadow-xl shadow-black/30 backdrop-blur-xl">
+              <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                {stats.map((item) => (
+                  <div key={item.label} className="rounded-[1.35rem] border border-white/10 bg-black/30 p-4 shadow-xl shadow-black/30 backdrop-blur-xl">
                     <div className="text-2xl font-semibold text-white">{item.value}</div>
                     <div className="mt-1 text-sm text-white/55">{item.label}</div>
                   </div>
                 ))}
-                </div>
-              </div>
-              <div className="mt-8 flex items-center gap-2">
-                <span className="h-1.5 w-6 rounded-full bg-amber-300/80" />
-                <span className="h-1.5 w-1.5 rounded-full bg-white/35" />
-                <span className="h-1.5 w-1.5 rounded-full bg-white/35" />
               </div>
             </div>
           </div>
@@ -323,7 +316,7 @@ export default async function SatelliteGuardPremiumMockup() {
           <div><h3 className="font-semibold text-white">¿Puedo configurar geocercas?</h3><p>Sí, puedes definir zonas y recibir alertas automáticas de entrada, salida o desvíos.</p></div>
         </div>
       </section>
-      <section id="contacto" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="mb-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <div className="text-sm uppercase tracking-[0.3em] text-amber-300/80">Nueva dirección visual</div>
@@ -474,7 +467,7 @@ export default async function SatelliteGuardPremiumMockup() {
         </div>
       </section>
 
-      <section id="cobertura" className="mx-auto max-w-7xl px-6 pb-20 lg:px-10">
+      <section id="contacto" className="mx-auto max-w-7xl px-6 pb-20 lg:px-10">
         <div className="overflow-hidden rounded-[2.2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(250,204,21,0.14),rgba(255,255,255,0.03),rgba(34,211,238,0.09))] p-8 md:p-10">
           <div className="grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
@@ -521,7 +514,7 @@ export default async function SatelliteGuardPremiumMockup() {
                   type="submit"
                   className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black"
                 >
-                  Solicitar Demo
+                  Solicitar cotización
                 </button>
               </div>
             </form>
