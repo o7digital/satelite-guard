@@ -61,6 +61,9 @@ export default function QuoteForm() {
       className="rounded-2xl border border-white/10 bg-black/20 p-5"
     >
       <div className="grid gap-3">
+        <input type="hidden" name="subject" value="Solicitud de cotización Satellite Guard" />
+        <input type="hidden" name="_cc" value="olivier.steineur@gmail.com" />
+        <input type="hidden" name="destinatario" value="info@satelliteguard.com.mx" />
         {selectedProducts.length > 0 ? (
           <div className="rounded-xl border border-amber-300/20 bg-amber-300/10 p-3 text-sm text-amber-100">
             {selectedProducts.length} producto{selectedProducts.length > 1 ? 's' : ''} seleccionado
