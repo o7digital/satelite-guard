@@ -359,6 +359,11 @@ export default function SatelliteGuardPremiumMockup() {
         </div>
       </section>
       <footer className="border-t border-white/10 bg-black/45">
+        <div className="mx-auto flex max-w-7xl justify-center px-6 pt-6 lg:px-10">
+          <a href="#inicio" className="text-sm font-medium text-cyan-300 transition hover:text-cyan-200">
+            Back to top
+          </a>
+        </div>
         <div className="mx-auto max-w-7xl px-6 py-8 text-center text-xs leading-7 text-white/45 lg:px-10">
           {seoKeywords.join(" · ")}
         </div>
