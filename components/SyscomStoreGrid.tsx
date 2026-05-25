@@ -1,12 +1,29 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { StoreProduct } from './SyscomStoreSection'
+
+const storageKey = 'satellite-guard-quote-products'
+const eventName = 'satellite-guard-quote-products-updated'
 
 export default function SyscomStoreGrid({ products }: { products: StoreProduct[] }) {
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState('all')
   const [stockOnly, setStockOnly] = useState(false)
+  const [selectedProducts, setSelectedProducts] = useState<StoreProduct[]>([])
+
+  useEffect(() => {
+    window.setTimeout(() => {
+      try {
+        const rawValue = window.localStorage.getItem(storageKey)
+        if (!rawValue) return
+        const parsed = JSON.parse(rawValue)
+        if (Array.isArray(parsed)) setSelectedProducts(parsed as StoreProduct[])
+      } catch {
+        setSelectedProducts([])
+      }
+    }, 0)
+  }, [])
 
   const categories = useMemo(() => {
     return Array.from(new Set(products.map((product) => product.category).filter(Boolean))).sort()
@@ -28,6 +45,25 @@ export default function SyscomStoreGrid({ products }: { products: StoreProduct[]
       return matchesQuery && matchesCategory && matchesStock
     })
   }, [category, products, query, stockOnly])
+
+  function updateSelectedProducts(nextProducts: StoreProduct[]) {
+    setSelectedProducts(nextProducts)
+    window.localStorage.setItem(storageKey, JSON.stringify(nextProducts))
+    window.dispatchEvent(new CustomEvent(eventName))
+  }
+
+  function toggleProduct(product: StoreProduct) {
+    const isSelected = selectedProducts.some((item) => item.key === product.key)
+    const nextProducts = isSelected
+      ? selectedProducts.filter((item) => item.key !== product.key)
+      : [...selectedProducts, product]
+
+    updateSelectedProducts(nextProducts)
+  }
+
+  function goToQuoteForm() {
+    window.location.hash = 'contacto'
+  }
 
   return (
     <>
@@ -65,9 +101,40 @@ export default function SyscomStoreGrid({ products }: { products: StoreProduct[]
         {filteredProducts.length} de {products.length} productos
       </div>
 
+      {selectedProducts.length > 0 ? (
+        <div className="sticky top-4 z-30 mb-6 rounded-2xl border border-amber-300/25 bg-[#11100a]/95 p-4 shadow-2xl shadow-black/30 backdrop-blur-xl">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div>
+              <div className="text-sm font-semibold text-amber-200">
+                {selectedProducts.length} producto{selectedProducts.length > 1 ? 's' : ''} seleccionado
+                {selectedProducts.length > 1 ? 's' : ''}
+              </div>
+              <div className="mt-1 text-xs text-white/60">
+                Se agregará{selectedProducts.length > 1 ? 'n' : ''} al mensaje del formulario de cotización.
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={goToQuoteForm}
+              className="rounded-full bg-amber-300 px-5 py-2 text-sm font-semibold text-black transition hover:bg-amber-200"
+            >
+              Pedir cotización
+            </button>
+          </div>
+        </div>
+      ) : null}
+
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {filteredProducts.map((product, idx) => (
-          <article key={`${product.key}-${idx}`} className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]">
+          <article
+            key={`${product.key}-${idx}`}
+            className={`overflow-hidden rounded-lg border bg-white/[0.04] transition ${
+              selectedProducts.some((item) => item.key === product.key)
+                ? 'border-amber-300 shadow-2xl shadow-amber-300/10'
+                : 'border-white/10 hover:border-amber-300/45'
+            }`}
+          >
+            <button type="button" onClick={() => toggleProduct(product)} className="block w-full text-left">
             <div className="flex aspect-[4/3] items-center justify-center bg-white">
               {product.image ? (
                 <img src={product.image} alt={product.title} className="h-full w-full object-contain p-4" loading="lazy" />
@@ -84,7 +151,11 @@ export default function SyscomStoreGrid({ products }: { products: StoreProduct[]
                 {product.price ? <p className="text-base font-semibold text-amber-200">{product.price}</p> : <span />}
                 {product.stock ? <p className="text-sm text-white/65">Stock: {product.stock}</p> : null}
               </div>
+              <div className="mt-4 rounded-full border border-amber-300/30 px-4 py-2 text-center text-sm font-semibold text-amber-200">
+                {selectedProducts.some((item) => item.key === product.key) ? 'Seleccionado' : 'Seleccionar para cotización'}
+              </div>
             </div>
+            </button>
           </article>
         ))}
       </div>

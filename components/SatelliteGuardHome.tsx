@@ -1,4 +1,5 @@
 import SyscomStoreSection from "./SyscomStoreSection"
+import QuoteForm from "./QuoteForm"
 
 export default async function SatelliteGuardPremiumMockup() {
   const seoKeywords = [
@@ -481,45 +482,7 @@ export default async function SatelliteGuardPremiumMockup() {
                 Esta V4 ya puede servir como base más sólida para la siguiente etapa del front.
               </p>
             </div>
-            <form
-              action="https://formspree.io/f/xnjwkdqg"
-              method="POST"
-              className="rounded-2xl border border-white/10 bg-black/20 p-5"
-            >
-              <div className="grid gap-3">
-                <input
-                  name="nombre"
-                  required
-                  placeholder="Nombre"
-                  className="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/60"
-                />
-                <input
-                  name="telefono"
-                  placeholder="Teléfono"
-                  className="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/60"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="Correo electrónico"
-                  className="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/60"
-                />
-                <textarea
-                  name="mensaje"
-                  required
-                  placeholder="Mensaje"
-                  rows={4}
-                  className="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/60"
-                />
-                <button
-                  type="submit"
-                  className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black"
-                >
-                  Solicitar cotización
-                </button>
-              </div>
-            </form>
+            <QuoteForm />
           </div>
         </div>
       </section>
