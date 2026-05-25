@@ -11,12 +11,39 @@ type SyscomProduct = {
   total_existencia?: number | string
 }
 
+type StoreProduct = {
+  key: string
+  title: string
+  brand: string
+  model?: string
+  price?: string
+  stock?: string
+}
+
 const localFallback: SyscomProduct[] = [
   { titulo: 'PRO43G', marca: 'SYSCOM' },
   { titulo: 'Global Star', marca: 'SYSCOM' },
   { titulo: 'CTS-100', marca: 'SYSCOM' },
   { titulo: 'Teléfono Satelital Iridium', marca: 'SYSCOM' },
 ]
+
+function asText(value: unknown): string | undefined {
+  if (value === null || value === undefined) return undefined
+  if (typeof value === 'string' || typeof value === 'number') return String(value)
+  return undefined
+}
+
+function normalizeProduct(product: SyscomProduct, idx: number): StoreProduct {
+  const brand = typeof product.marca === 'string' ? product.marca : asText(product.marca?.nombre)
+  return {
+    key: asText(product.producto_id) || asText(product.sku) || asText(product.modelo) || `item-${idx}`,
+    title: asText(product.titulo) || asText(product.modelo) || asText(product.sku) || 'Producto',
+    brand: brand || 'SYSCOM',
+    model: asText(product.modelo) || asText(product.sku),
+    price: asText(product.precio),
+    stock: asText(product.existencia) || asText(product.total_existencia),
+  }
+}
 
 async function fetchSyscomProducts(): Promise<{ items: SyscomProduct[]; error?: string }> {
   const clientId = process.env.SYSCOM_CLIENT_ID
@@ -31,7 +58,7 @@ async function fetchSyscomProducts(): Promise<{ items: SyscomProduct[]; error?: 
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({ grant_type: 'client_credentials', client_id: clientId, client_secret: clientSecret }),
-      cache: 'no-store',
+      next: { revalidate: 3600 },
     })
 
     if (!tokenRes.ok) {
@@ -53,7 +80,7 @@ async function fetchSyscomProducts(): Promise<{ items: SyscomProduct[]; error?: 
     for (const url of candidates) {
       const productsRes = await fetch(url, {
         headers: { Authorization: `Bearer ${tokenJson.access_token}`, Accept: 'application/json' },
-        cache: 'no-store',
+        next: { revalidate: 3600 },
       })
       lastStatus = productsRes.status
       if (!productsRes.ok) {
@@ -84,6 +111,7 @@ async function fetchSyscomProducts(): Promise<{ items: SyscomProduct[]; error?: 
 
 export default async function SyscomStoreSection() {
   const { items, error } = await fetchSyscomProducts()
+  const products = items.map(normalizeProduct)
 
   return (
     <section id="tienda" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
@@ -97,13 +125,13 @@ export default async function SyscomStoreSection() {
       {error ? <p className="mb-6 text-sm text-amber-300">{error}</p> : null}
 
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {items.map((product, idx) => (
-          <article key={`${product.producto_id || product.sku || product.modelo || 'item'}-${idx}`} className="rounded-[1.6rem] border border-white/10 bg-white/[0.04] p-6">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">{typeof product.marca === 'string' ? product.marca : product.marca?.nombre || 'SYSCOM'}</div>
-            <h3 className="mt-2 text-xl font-semibold">{product.titulo || product.modelo || product.sku || 'Producto'}</h3>
-            {product.modelo || product.sku ? <p className="mt-2 text-sm text-white/60">Modelo: {product.modelo || product.sku}</p> : null}
-            {product.precio !== undefined ? <p className="mt-4 text-lg font-semibold text-amber-200">${product.precio}</p> : null}
-            {product.existencia !== undefined || product.total_existencia !== undefined ? <p className="mt-1 text-sm text-white/65">Existencia: {product.existencia ?? product.total_existencia}</p> : null}
+        {products.map((product, idx) => (
+          <article key={`${product.key}-${idx}`} className="rounded-[1.6rem] border border-white/10 bg-white/[0.04] p-6">
+            <div className="text-xs uppercase tracking-[0.2em] text-white/45">{product.brand}</div>
+            <h3 className="mt-2 text-xl font-semibold">{product.title}</h3>
+            {product.model ? <p className="mt-2 text-sm text-white/60">Modelo: {product.model}</p> : null}
+            {product.price ? <p className="mt-4 text-lg font-semibold text-amber-200">${product.price}</p> : null}
+            {product.stock ? <p className="mt-1 text-sm text-white/65">Existencia: {product.stock}</p> : null}
           </article>
         ))}
       </div>
