@@ -122,9 +122,7 @@ export default async function SatelliteGuardPremiumMockup() {
   return (
     <div className="min-h-screen overflow-hidden bg-[#02050b] text-white">
       <section id="inicio" className="relative isolate min-h-screen border-b border-white/10 bg-[#02050b]">
-        <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-center opacity-65 hero-slide hero-slide-1" />
-        <div className="absolute inset-0 bg-[url('/dashboard-bg.webp')] bg-cover bg-center opacity-0 hero-slide hero-slide-2" />
-        <div className="absolute inset-0 bg-[url('/og-image.webp')] bg-cover bg-center opacity-0 hero-slide hero-slide-3" />
+        <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-[70%_center] opacity-65" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,3,9,0.76)_0%,rgba(1,3,9,0.48)_36%,rgba(1,3,9,0.20)_58%,rgba(1,3,9,0.40)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(251,191,36,0.12),transparent_16%),radial-gradient(circle_at_82%_20%,rgba(34,211,238,0.10),transparent_18%),radial-gradient(circle_at_56%_72%,rgba(15,23,42,0.26),transparent_36%)]" />
         <div className="absolute inset-0 opacity-[0.12] bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:54px_54px]" />
