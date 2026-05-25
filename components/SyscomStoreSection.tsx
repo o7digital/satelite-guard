@@ -1,4 +1,5 @@
 import React from 'react'
+import SyscomStoreGrid from './SyscomStoreGrid'
 
 type SyscomProduct = {
   producto_id?: string
@@ -9,15 +10,19 @@ type SyscomProduct = {
   precio?: number | string
   existencia?: number | string
   total_existencia?: number | string
+  img_portada?: string
+  categorias?: Array<{ nombre?: string; nivel?: number }>
 }
 
-type StoreProduct = {
+export type StoreProduct = {
   key: string
   title: string
   brand: string
   model?: string
   price?: string
   stock?: string
+  image?: string
+  category?: string
 }
 
 const localFallback: SyscomProduct[] = [
@@ -35,6 +40,7 @@ function asText(value: unknown): string | undefined {
 
 function normalizeProduct(product: SyscomProduct, idx: number): StoreProduct {
   const brand = typeof product.marca === 'string' ? product.marca : asText(product.marca?.nombre)
+  const category = product.categorias?.find((item) => item.nivel === 1)?.nombre || product.categorias?.[0]?.nombre
   return {
     key: asText(product.producto_id) || asText(product.sku) || asText(product.modelo) || `item-${idx}`,
     title: asText(product.titulo) || asText(product.modelo) || asText(product.sku) || 'Producto',
@@ -42,7 +48,36 @@ function normalizeProduct(product: SyscomProduct, idx: number): StoreProduct {
     model: asText(product.modelo) || asText(product.sku),
     price: asText(product.precio),
     stock: asText(product.existencia) || asText(product.total_existencia),
+    image: asText(product.img_portada),
+    category: asText(category),
   }
+}
+
+async function fetchProductsPage(url: string, token: string) {
+  const response = await fetch(url, {
+    headers: { Authorization: `Bearer ${token}`, Accept: 'application/json' },
+    next: { revalidate: 3600 },
+  })
+
+  if (!response.ok) {
+    const body = await response.text()
+    console.error('[SYSCOM] products error', { url, status: response.status, body: body.slice(0, 400) })
+    return null
+  }
+
+  return (await response.json()) as {
+    productos?: SyscomProduct[]
+    data?: SyscomProduct[]
+    paginas?: number | string
+  } | SyscomProduct[]
+}
+
+function getProducts(payload: Awaited<ReturnType<typeof fetchProductsPage>>): SyscomProduct[] {
+  if (!payload) return []
+  if (Array.isArray(payload)) return payload
+  if (Array.isArray(payload.productos)) return payload.productos
+  if (Array.isArray(payload.data)) return payload.data
+  return []
 }
 
 async function fetchSyscomProducts(): Promise<{ items: SyscomProduct[]; error?: string }> {
@@ -69,37 +104,31 @@ async function fetchSyscomProducts(): Promise<{ items: SyscomProduct[]; error?: 
 
     const tokenJson = (await tokenRes.json()) as { access_token?: string }
     if (!tokenJson.access_token) return { items: localFallback, error: 'Token SYSCOM vacío' }
+    const accessToken = tokenJson.access_token
 
     const candidates = [
-      'https://developers.syscom.mx/api/v1/marcas/syscom/productos?stock=1&agrupar=1&pagina=1',
-      'https://developers.syscom.mx/api/v1/productos?marca=syscom&stock=1&agrupar=1&pagina=1',
-      'https://developers.syscom.mx/api/v1/productos?busqueda=gps&stock=1&agrupar=1&pagina=1',
+      'https://developers.syscom.mx/api/v1/marcas/syscom/productos?stock=1&agrupar=1',
+      'https://developers.syscom.mx/api/v1/productos?marca=syscom&stock=1&agrupar=1',
+      'https://developers.syscom.mx/api/v1/productos?busqueda=gps&stock=1&agrupar=1',
     ]
 
     let lastStatus = 500
-    for (const url of candidates) {
-      const productsRes = await fetch(url, {
-        headers: { Authorization: `Bearer ${tokenJson.access_token}`, Accept: 'application/json' },
-        next: { revalidate: 3600 },
-      })
-      lastStatus = productsRes.status
-      if (!productsRes.ok) {
-        const body = await productsRes.text()
-        console.error('[SYSCOM] products error', { url, status: productsRes.status, body: body.slice(0, 400) })
+    for (const baseUrl of candidates) {
+      const firstUrl = `${baseUrl}&pagina=1`
+      const firstPage = await fetchProductsPage(firstUrl, accessToken)
+      const firstItems = getProducts(firstPage)
+      if (!firstPage) {
+        lastStatus = 500
         continue
       }
 
-      const productsJson = (await productsRes.json()) as { productos?: SyscomProduct[]; data?: SyscomProduct[] } | SyscomProduct[]
-      const items = Array.isArray(productsJson)
-        ? productsJson
-        : Array.isArray(productsJson.productos)
-          ? productsJson.productos
-          : Array.isArray(productsJson.data)
-            ? productsJson.data
-            : []
+      const pageCount = Array.isArray(firstPage) ? 1 : Number(firstPage.paginas || 1)
+      const urls = Array.from({ length: Math.max(0, pageCount - 1) }, (_, idx) => `${baseUrl}&pagina=${idx + 2}`)
+      const restPages = await Promise.all(urls.map((url) => fetchProductsPage(url, accessToken)))
+      const items = [...firstItems, ...restPages.flatMap(getProducts)]
 
-      if (items.length) return { items: items.slice(0, 24) }
-      console.error('[SYSCOM] products empty payload', { url })
+      if (items.length) return { items }
+      console.error('[SYSCOM] products empty payload', { url: firstUrl })
     }
 
     return { items: localFallback, error: `Consulta productos SYSCOM fallida (${lastStatus})` }
@@ -124,17 +153,7 @@ export default async function SyscomStoreSection() {
 
       {error ? <p className="mb-6 text-sm text-amber-300">{error}</p> : null}
 
-      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {products.map((product, idx) => (
-          <article key={`${product.key}-${idx}`} className="rounded-[1.6rem] border border-white/10 bg-white/[0.04] p-6">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/45">{product.brand}</div>
-            <h3 className="mt-2 text-xl font-semibold">{product.title}</h3>
-            {product.model ? <p className="mt-2 text-sm text-white/60">Modelo: {product.model}</p> : null}
-            {product.price ? <p className="mt-4 text-lg font-semibold text-amber-200">${product.price}</p> : null}
-            {product.stock ? <p className="mt-1 text-sm text-white/65">Existencia: {product.stock}</p> : null}
-          </article>
-        ))}
-      </div>
+      <SyscomStoreGrid products={products} />
     </section>
   )
 }
