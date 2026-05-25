@@ -145,19 +145,17 @@ export default async function SatelliteGuardPremiumMockup() {
               <a href="#contacto" className="transition hover:text-white">Contacto</a>
             </nav>
             <details className="relative z-[120] md:hidden">
-              <summary className="list-none rounded-full border border-white/20 bg-white/10 px-3 py-2 text-white/90">
+              <summary className="cursor-pointer list-none rounded-full border border-white/20 bg-white/10 px-3 py-2 text-white/90">
                 <span className="sr-only">Abrir menú</span>
                 <span aria-hidden="true">☰</span>
               </summary>
-              <nav className="fixed inset-0 z-[220] bg-black/45 p-4">
-                <div className="ml-auto mt-20 w-64 rounded-2xl border border-white/15 bg-[#07101c]/98 p-3 text-sm text-white/90 shadow-2xl backdrop-blur-xl">
-                  <a href="#inicio" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Inicio</a>
-                  <a href="#tecnologia" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Tecnología</a>
-                  <a href="#flotillas" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Flotillas</a>
-                  <a href="#quienes-somos" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Quiénes Somos</a>
-                  <a href="#tienda" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Productos</a>
-                  <a href="#contacto" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Contacto</a>
-                </div>
+              <nav className="absolute right-0 top-12 w-64 rounded-2xl border border-white/15 bg-[#07101c]/98 p-3 text-base font-medium text-white/90 shadow-2xl shadow-black/40 backdrop-blur-xl">
+                <a href="#inicio" className="block rounded-xl px-3 py-2.5 transition hover:bg-white/10">Inicio</a>
+                <a href="#tecnologia" className="block rounded-xl px-3 py-2.5 transition hover:bg-white/10">Tecnología</a>
+                <a href="#flotillas" className="block rounded-xl px-3 py-2.5 transition hover:bg-white/10">Flotillas</a>
+                <a href="#quienes-somos" className="block rounded-xl px-3 py-2.5 transition hover:bg-white/10">Quiénes Somos</a>
+                <a href="#tienda" className="block rounded-xl px-3 py-2.5 transition hover:bg-white/10">Productos</a>
+                <a href="#contacto" className="block rounded-xl px-3 py-2.5 transition hover:bg-white/10">Contacto</a>
               </nav>
             </details>
             <div className="flex items-center gap-3">
@@ -185,8 +183,8 @@ export default async function SatelliteGuardPremiumMockup() {
                 Monitoreo GPS a sus Unidades
               </div>
               <h1 className="text-5xl font-semibold leading-[0.92] tracking-tight md:text-6xl xl:text-[5rem]">
-                <span className="block whitespace-nowrap">Somos Distribuidores</span>
-                <span className="block whitespace-nowrap bg-gradient-to-r from-white via-amber-200 to-cyan-200 bg-clip-text text-transparent">
+                <span className="block md:whitespace-nowrap">Somos Distribuidores</span>
+                <span className="block bg-gradient-to-r from-white via-amber-200 to-cyan-200 bg-clip-text text-transparent md:whitespace-nowrap">
                   SYSCOM en Mexico
                 </span>
               </h1>
