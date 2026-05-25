@@ -27,24 +27,46 @@ async function fetchSyscomProducts(): Promise<{ items: SyscomProduct[]; error?: 
     })
 
     if (!tokenRes.ok) {
+      console.error('[SYSCOM] token error', { status: tokenRes.status })
       return { items: [], error: `Auth SYSCOM fallida (${tokenRes.status})` }
     }
 
     const tokenJson = (await tokenRes.json()) as { access_token?: string }
     if (!tokenJson.access_token) return { items: [], error: 'Token SYSCOM vacío' }
 
-    const productsRes = await fetch('https://developers.syscom.mx/api/v1/productos', {
-      headers: { Authorization: `Bearer ${tokenJson.access_token}` },
-      cache: 'no-store',
-    })
+    const candidates = [
+      'https://developers.syscom.mx/api/v1/productos?page=1',
+      'https://developers.syscom.mx/api/v1/productos?pagina=1',
+      'https://developers.syscom.mx/api/v1/productos/all',
+    ]
 
-    if (!productsRes.ok) {
-      return { items: [], error: `Consulta productos SYSCOM fallida (${productsRes.status})` }
+    let lastStatus = 500
+    for (const url of candidates) {
+      const productsRes = await fetch(url, {
+        headers: { Authorization: `Bearer ${tokenJson.access_token}` },
+        cache: 'no-store',
+      })
+      lastStatus = productsRes.status
+      if (!productsRes.ok) {
+        console.error('[SYSCOM] products error', { url, status: productsRes.status })
+        continue
+      }
+
+      const productsJson = (await productsRes.json()) as
+        | { productos?: SyscomProduct[]; data?: SyscomProduct[] }
+        | SyscomProduct[]
+      const items = Array.isArray(productsJson)
+        ? productsJson
+        : Array.isArray(productsJson.productos)
+          ? productsJson.productos
+          : Array.isArray(productsJson.data)
+            ? productsJson.data
+            : []
+      if (items.length) return { items }
+      console.error('[SYSCOM] products empty payload', { url })
     }
 
-    const productsJson = (await productsRes.json()) as { productos?: SyscomProduct[] } | SyscomProduct[]
-    const items = Array.isArray(productsJson) ? productsJson : Array.isArray(productsJson.productos) ? productsJson.productos : []
-    return { items }
+    return { items: [], error: `Consulta productos SYSCOM fallida (${lastStatus})` }
   } catch {
     return { items: [], error: 'No se pudo conectar con SYSCOM' }
   }
