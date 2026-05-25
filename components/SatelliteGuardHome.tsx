@@ -122,7 +122,9 @@ export default async function SatelliteGuardPremiumMockup() {
   return (
     <div className="min-h-screen overflow-hidden bg-[#02050b] text-white">
       <section id="inicio" className="relative isolate min-h-screen border-b border-white/10 bg-[#02050b]">
-        <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-[70%_center] opacity-65" />
+        <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-center opacity-65 hero-slide hero-slide-1" />
+        <div className="absolute inset-0 bg-[url('/dashboard-bg.webp')] bg-cover bg-center opacity-0 hero-slide hero-slide-2" />
+        <div className="absolute inset-0 bg-[url('/og-image.webp')] bg-cover bg-center opacity-0 hero-slide hero-slide-3" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,3,9,0.76)_0%,rgba(1,3,9,0.48)_36%,rgba(1,3,9,0.20)_58%,rgba(1,3,9,0.40)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(251,191,36,0.12),transparent_16%),radial-gradient(circle_at_82%_20%,rgba(34,211,238,0.10),transparent_18%),radial-gradient(circle_at_56%_72%,rgba(15,23,42,0.26),transparent_36%)]" />
         <div className="absolute inset-0 opacity-[0.12] bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:54px_54px]" />
@@ -140,9 +142,7 @@ export default async function SatelliteGuardPremiumMockup() {
               <a href="#tecnologia" className="transition hover:text-white">Tecnología</a>
               <a href="#flotillas" className="transition hover:text-white">Flotillas</a>
               <a href="#quienes-somos" className="transition hover:text-white">Quiénes Somos</a>
-              <a href="#productos" className="transition hover:text-white">Productos</a>
-              <a href="#tienda" className="transition hover:text-white">Tienda</a>
-              <a href="#cobertura" className="transition hover:text-white">Cobertura</a>
+              <a href="#tienda" className="transition hover:text-white">Productos</a>
               <a href="#contacto" className="transition hover:text-white">Contacto</a>
             </nav>
             <details className="relative z-[120] md:hidden">
@@ -156,9 +156,7 @@ export default async function SatelliteGuardPremiumMockup() {
                   <a href="#tecnologia" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Tecnología</a>
                   <a href="#flotillas" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Flotillas</a>
                   <a href="#quienes-somos" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Quiénes Somos</a>
-                  <a href="#productos" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Productos</a>
-                  <a href="#tienda" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Tienda</a>
-                  <a href="#cobertura" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Cobertura</a>
+                  <a href="#tienda" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Productos</a>
                   <a href="#contacto" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Contacto</a>
                 </div>
               </nav>
@@ -180,7 +178,7 @@ export default async function SatelliteGuardPremiumMockup() {
                 Seguridad · Inteligencia · Control total
               </div>
               <div className="mb-5 inline-flex items-center rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-xs uppercase tracking-[0.24em] text-cyan-100">
-                SOMOS DISTRIBUIDORES SYSCOM EN MEXICO.
+                Somos distribuidores SYSCOM Mexico
               </div>
               <h1 className="text-5xl font-semibold leading-[0.92] tracking-tight md:text-6xl xl:text-[5.35rem]">
                 Monitoreo GPS con una presencia

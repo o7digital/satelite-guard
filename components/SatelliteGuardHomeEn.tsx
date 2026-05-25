@@ -85,7 +85,7 @@ export default function SatelliteGuardPremiumMockup() {
               <a href="#" className="transition hover:text-white">Home</a>
               <a href="#" className="transition hover:text-white">Technology</a>
               <a href="#" className="transition hover:text-white">Fleets</a>
-              <a href="#" className="transition hover:text-white">Coverage</a>
+              <a href="#tienda" className="transition hover:text-white">Products</a>
               <a href="#" className="transition hover:text-white">Contact</a>
             </nav>
             <details className="relative md:hidden">
@@ -97,7 +97,7 @@ export default function SatelliteGuardPremiumMockup() {
                 <a href="#" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Home</a>
                 <a href="#" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Technology</a>
                 <a href="#" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Fleets</a>
-                <a href="#" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Coverage</a>
+                <a href="#tienda" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Products</a>
                 <a href="#" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Contact</a>
               </nav>
             </details>
