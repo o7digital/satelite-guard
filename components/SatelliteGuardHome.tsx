@@ -176,17 +176,17 @@ export default async function SatelliteGuardPremiumMockup() {
           </header>
 
           <div className="relative flex flex-1 items-center py-20 lg:min-h-[88vh] lg:py-24 xl:py-28">
-            <div className="relative z-10 max-w-3xl">
+            <div className="relative z-10 max-w-5xl">
               <div className="mb-5 inline-flex items-center rounded-full border border-amber-300/20 bg-amber-300/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-amber-200">
                 Seguridad · Inteligencia · Control total
               </div>
               <div className="mb-5 inline-flex items-center rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-xs uppercase tracking-[0.24em] text-cyan-100">
                 Monitoreo GPS a sus Unidades
               </div>
-              <h1 className="text-5xl font-semibold leading-[0.92] tracking-tight md:text-6xl xl:text-[5.35rem]">
-                Somos Distribuidores SYSCOM
-                <span className="block bg-gradient-to-r from-white via-amber-200 to-cyan-200 bg-clip-text text-transparent">
-                  en Mexico
+              <h1 className="text-5xl font-semibold leading-[0.92] tracking-tight md:text-6xl xl:text-[5rem]">
+                <span className="block whitespace-nowrap">Somos Distribuidores</span>
+                <span className="block whitespace-nowrap bg-gradient-to-r from-white via-amber-200 to-cyan-200 bg-clip-text text-transparent">
+                  SYSCOM en Mexico
                 </span>
               </h1>
 
