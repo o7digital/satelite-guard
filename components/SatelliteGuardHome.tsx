@@ -49,9 +49,9 @@ export default async function SatelliteGuardPremiumMockup() {
 
   const stats = [
     { value: '24/7', label: 'Monitoreo activo' },
-    { value: '8,500+', label: 'Unidades vigiladas' },
+    { value: '3,500+', label: 'Unidades vigiladas' },
     { value: '120k+', label: 'Eventos procesados' },
-    { value: '15+', label: 'Años de experiencia' },
+    { value: '19+', label: 'Años de experiencia' },
   ];
 
   const pillars = [
@@ -135,7 +135,7 @@ export default async function SatelliteGuardPremiumMockup() {
               <div className="text-xs uppercase tracking-[0.38em] text-amber-300/85">Satellite Guard</div>
               <div className="text-sm text-white/50">Elite GPS Monitoring</div>
             </div>
-            <nav className="hidden gap-8 text-sm text-white/70 md:flex">
+            <nav className="hidden gap-6 text-base font-medium text-white/80 md:flex xl:gap-8">
               <a href="#inicio" className="transition hover:text-white">Inicio</a>
               <a href="#tecnologia" className="transition hover:text-white">Tecnología</a>
               <a href="#flotillas" className="transition hover:text-white">Flotillas</a>
@@ -166,7 +166,12 @@ export default async function SatelliteGuardPremiumMockup() {
               >
                 EN
               </a>
-              <button className="hidden rounded-full border border-white/15 px-4 py-2 text-sm text-white/80 transition hover:bg-white/10 md:inline-flex">Acceso clientes</button>
+              <a
+                href="#contacto"
+                className="hidden rounded-full border border-amber-300/40 bg-amber-300 px-4 py-2 text-sm font-semibold text-black shadow-lg shadow-amber-300/20 transition hover:bg-amber-200 md:inline-flex"
+              >
+                Solicitar cotización
+              </a>
             </div>
           </header>
 
@@ -176,17 +181,14 @@ export default async function SatelliteGuardPremiumMockup() {
                 Seguridad · Inteligencia · Control total
               </div>
               <div className="mb-5 inline-flex items-center rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-xs uppercase tracking-[0.24em] text-cyan-100">
-                Somos distribuidores SYSCOM Mexico
+                Monitoreo GPS a sus Unidades
               </div>
               <h1 className="text-5xl font-semibold leading-[0.92] tracking-tight md:text-6xl xl:text-[5.35rem]">
-                Monitoreo GPS con una presencia
+                Somos Distribuidores SYSCOM
                 <span className="block bg-gradient-to-r from-white via-amber-200 to-cyan-200 bg-clip-text text-transparent">
-                  más fuerte y confiable.
+                  en Mexico
                 </span>
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/68">
-                La V4 fortalece la presencia de Satellite Guard con una imagen más profesional, operación clara y tecnología de precisión para monitoreo empresarial.
-              </p>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
                 {stats.map((item) => (
