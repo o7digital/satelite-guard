@@ -1,4 +1,6 @@
-export default function SatelliteGuardPremiumMockup() {
+import SyscomStoreSection from "./SyscomStoreSection"
+
+export default async function SatelliteGuardPremiumMockup() {
   const seoKeywords = [
     "monitoreo gps Mexico CDMX",
     "rastreo gps Mexico CDMX",
@@ -139,6 +141,7 @@ export default function SatelliteGuardPremiumMockup() {
               <a href="#flotillas" className="transition hover:text-white">Flotillas</a>
               <a href="#quienes-somos" className="transition hover:text-white">Quiénes Somos</a>
               <a href="#productos" className="transition hover:text-white">Productos</a>
+              <a href="#tienda" className="transition hover:text-white">Tienda</a>
               <a href="#cobertura" className="transition hover:text-white">Cobertura</a>
               <a href="#contacto" className="transition hover:text-white">Contacto</a>
             </nav>
@@ -153,6 +156,7 @@ export default function SatelliteGuardPremiumMockup() {
                 <a href="#flotillas" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Flotillas</a>
                 <a href="#quienes-somos" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Quiénes Somos</a>
                 <a href="#productos" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Productos</a>
+                <a href="#tienda" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Tienda</a>
                 <a href="#cobertura" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Cobertura</a>
                 <a href="#contacto" className="block rounded-lg px-2 py-1.5 transition hover:bg-white/10">Contacto</a>
               </nav>
@@ -439,6 +443,8 @@ export default function SatelliteGuardPremiumMockup() {
           ))}
         </div>
       </section>
+
+      <SyscomStoreSection />
 
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
