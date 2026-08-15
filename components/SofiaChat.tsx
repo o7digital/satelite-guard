@@ -70,7 +70,7 @@ export default function SofiaChat() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [leadSent, setLeadSent] = useState(false);
+  const [leadSent, setLeadSent] = useState(true);
   const [lead, setLead] = useState({ firstName: "", lastName: "", email: "", phone: "" });
   const [messages, setMessages] = useState([{ role: "assistant", content: copy.welcome }]);
 
